@@ -78,11 +78,13 @@ hr {
 a {
     color: #c61515;
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
     color:#d87093;
+    font-weight: bold;
 } 
 
 
@@ -129,6 +131,43 @@ a:hover {
 
     z-index: 0;
     position: relative;
+}
+
+.tab {
+    overflow: hidden;
+    border: 2px solid gray;
+    background-color: black;
+    color:#c61515 ;
+    font-weight: bold;
+}
+
+.tab button {
+    background-color: inherit;
+    color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.tab button:hover {
+    text-decoration: underline;
+    color:#d87093;
+    font-weight: bold;
+}
+
+.tab button.active{
+    text-decoration: underline;
+    color:#d87093;
+    font-weight: bold;
+}
+
+.tabcontent {
+    display:none;
+
 }
 
 /* a {

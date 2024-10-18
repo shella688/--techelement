@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>TechElement</title>
-        <link rel="icon" type="imagr/x-icon" href="../_assets/images/icon.png">
+        <link rel="icon" type="imagr/x-icon" href="../_assets/blinkies/lastNightADJSavedMyLife.webp">
 
         <script src="../_js/customHTML.js"></script>
+        <script src="../_js/musicGenreTabs.js"></script>
         
         <link id="theme" rel="stylesheet" title="theBack" href="../_css/back-style.css" type="text/css" media="all">
     </head>
@@ -30,84 +31,200 @@
             <br>
             <hr>
             <br>
-             
 
-            <div class="musicPlayer">
-              <img src="../_assets/images/Sick-Beats/NECT-cover.jpg" alt="The cover art for the album North East Coastal Town.">
-              <h2>Self Portrait</h2>
-              <h3>LIFE</h3>
-              <audio controls>
-                
-                <source src="https://cdn.discordapp.com/attachments/1098700813863501884/1098700892695441469/LIFE_-_North_East_Coastal_Town_-_08_Self_Portrait.mp3" type="audio/mpeg">
-                Your browser doesn't support this audio element!
-              </audio>
+
+            <!-- tab links, thanks W3schools -->
+            <div class="tab">
+              <button class="tablinks" onclick="openGenre(event, 'goth')">
+                Bit gothic
+              </button>
+              <button class="tablinks" onclick="openGenre(event, 'emo')">
+                Bit emo
+              </button>
+              <button class="tablinks" onclick="openGenre(event, 'other')">
+                Bit something else
+              </button>
             </div>
 
-            <p>
-              <b>WHO:</b> LIFE, off their 2022 album <a href="https://lifebanduk.bandcamp.com/album/north-east-coastal-town">North East Coastal Town</a>
-              <br>
-              <br>
-              <b>WHAT:</b> Alternative. I'd hesitate to call them purely punk, but definitely punk-adjacent
-              <br>
-              <br>
-              <b>WHY:</b> If you've never experienced the catharsis of shouting along to "<em>my imperfect body houses my imperfect mind!</em>" 
-              then I don't know what I can say to you
-              <br>
-              <br>
-            </p>
 
-            <br>
+            <!-- Tab content-->
+            <div id="goth" class="tabcontent">
+              
+              <div class="musicPlayer">
+                <img src="../_assets/images/Sick-Beats/EoH-cover.jpg" alt="The cover art for the album Evidence of Heaven">
+                <h2>Through the Pale Door</h2>
+                <h3>Faith and the Muse</h3>
+                <audio controls>
+                  <source src="https://64.media.tumblr.com/80e0ddc886efbdf7bec047fc81ee3af8/a34e6a59f09f38eb-6d/f1e1daf73dcc46a3fa1723bea2a8982e87a048f7.mp3" type="audio/mpeg">
+                  Your browser doesn't support this audio element!
+                </audio>
+              </div>
+  
+              <p>
+                <b>WHO:</b>  Faith and the Muse, from the 1999 album <a href="https://faithandthemuse.bandcamp.com/album/evidence-of-heaven">Evidence of Heaven</a>
+                <br>
+                <br>
+                <b>WHAT:</b>  Mostly synth-heavy darkwave
+                <br>
+                <br>
+                <b>WHY:</b>  My favourite song off one of my favourite albums. I'm nothing if not a sucker for songs in 3 time
+                <br>
+                <br>
+              </p> 
+
+              <br>
             <hr>
             <br>
 
             <div class="musicPlayer">
-              <img src="../_assets/images/Sick-Beats/DTTM-cover.jpg" alt="The cover art for the album Death To The Mechanisms.">
-              <h2>Rose Red</h2>
-              <h3>The Mechanisms</h3>
+              <img src="../_assets/images/Sick-Beats/MG-cover.jpg" alt="The cover art for the album Made Glorious">
+              <h2>Dandelion King</h2>
+              <h3>The March Violets</h3>
               <audio controls>
-                <source src="https://cdn.discordapp.com/attachments/1098700813863501884/1098701016695836804/The_Mechanisms_-_Death_To_The_Mechanisms_-_26_Rose_Red.mp3" type="audio/mpeg">
+                <source src="https://64.media.tumblr.com/801ea1e24ca2c13259af90dd2632b8ec/22936186c6725707-40/adca71ca70ecbbd29b3e110f5cc1b5e0bea2623e.mp3" type="audio/mpeg">
                 Your browser doesn't support this audio element!
               </audio>
             </div>
 
             <p>
-              <b>WHO:</b> The Mechanisms, from the album of their final concert, <a href="https://themechanisms.bandcamp.com/album/death-to-the-mechanisms">Death to the Mechanisms</a>
+              <b>WHO:</b> The March Violets, from the 2013 album <a href="https://marchviolets.bandcamp.com/album/made-glorious-2">Made Glorious</a>
               <br>
               <br>
-              <b>WHAT:</b> A steampunk cabaret band who take classic fairytales and myths, set them in space, and make songs about them
+              <b>WHAT:</b> The band's first full album, after a series of EPs, singles, and compilations released mostly in the 1980s. Typically very drum-machine gothic-rock sound.
               <br>
               <br>
-              <b>WHY:</b> This is the only proper album (ie, not just a Youtube video) of a live performance, and I love the energy
-              and how you can hear the audience singing along
-              <br>
-              <br>
-            </p>
-
-            <br>
-            <hr>
-            <br>
-
-            <div class="musicPlayer">
-              <img src="../_assets/images/Sick-Beats/OGA-cover.jpg" alt="The cover art for the album Oh Great Annihilator">
-              <h2>Disappear</h2>
-              <h3>Midcard</h3>
-              <audio controls>
-                <source src="https://cdn.discordapp.com/attachments/1098700813863501884/1098701016351916082/Midcard_-_Oh_Great_Annihilator_-_04_Disappear.mp3" type="audio/mpeg">
-                Your browser doesn't support this audio element!
-              </audio>
-            </div>
-
-            <p>
-              <b>WHO:</b> Midcard, from the album <a href="https://midcard.bandcamp.com/album/oh-great-annihilator">Oh Great Annihilator</a>
-              <br>
-              <br>
-              <b>WHAT:</b> Emo, but think more midwest emo than something like My Chemical Romance
-              <br>
-              <br>
-              <b>WHY:</b> My emotional support Texas music maker with lyrics that make me want to lie on the floor
+              <b>WHY:</b> Disregard what I just said about drum machines. Dandelion King is something that sounds like 
+              nothing else the March Violets have made. I love the beat and the echoing vocals
               <br>
               <br>
             </p> 
+
+            </div>
+
+            <div id="emo" class="tabcontent">
+              <div class="musicPlayer">
+                <img src="../_assets/images/Sick-Beats/OGA-cover.jpg" alt="The cover art for the album Oh Great Annihilator">
+                <h2>Disappear</h2>
+                <h3>Midcard</h3>
+                <audio controls>
+                  <source src="https://64.media.tumblr.com/d8769286e9607c0d96e7901c383b23df/68219c5cef561631-77/6d1c3e917791927d2f105f469876d8cc76daded6.mp3" type="audio/mpeg">
+                  Your browser doesn't support this audio element!
+                </audio>
+              </div>
+  
+              <p>
+                <b>WHO:</b> Midcard, from the album <a href="https://midcard.bandcamp.com/album/oh-great-annihilator">Oh Great Annihilator</a>
+                <br>
+                <br>
+                <b>WHAT:</b> Emo, but think more midwest emo than something like My Chemical Romance
+                <br>
+                <br>
+                <b>WHY:</b> My emotional support Texas music maker with lyrics that make me want to lie on the floor
+                <br>
+                <br>
+              </p> 
+
+            <br>
+            <hr>
+            <br>
+
+              <div class="musicPlayer">
+                <img src="../_assets/images/Sick-Beats/LS-cover.jpg" alt="The cover art for the album Liminal Space">
+                <h2>Leaving Early</h2>
+                <h3>Scars of Juliet</h3>
+                <audio controls>
+                  <source src="https://64.media.tumblr.com/b1d28536b09c7ea377b05296bde74bfe/ee55f4ef74ba2470-15/2b442d84fb57c12a605d430a81a0476532a18fd4.mp3" type="audio/mpeg">
+                  Your browser doesn't support this audio element!
+                </audio>
+              </div>
+  
+              <p>
+                <b>WHO:</b> Scars of Juliet, from the 2020 album <a href="https://scarsofjuliet.bandcamp.com/album/liminal-space">Liminal Space</a>
+                <br>
+                <br>
+                <b>WHAT:</b> I can only assume this came about from a group of mates who looked at each other one day like "yeah, we <em>should</em> make that band!".
+                 That sounds derogatory it isn't! I really like Scars of Juliet, I like their sound, I own this album on CD, but also they're the kind who 
+                 seem to struggle to carry a tune in a bucket.
+                <br>
+                <br>
+                <b>WHY:</b> have you ever been at a party that you kinda really want to have a good time at but also you hate 
+                every moment of it and know on a fundamental level that this is not your crowd? Yeah.
+                <br>
+                <br>
+              </p> 
+
+            </div>
+
+            
+
+            
+
+            
+
+            <div id="other" class="tabcontent">
+              <div class="musicPlayer">
+                <img src="../_assets/images/Sick-Beats/NECT-cover.jpg" alt="The cover art for the album North East Coastal Town.">
+                <h2>Self Portrait</h2>
+                <h3>LIFE</h3>
+                <audio controls>
+                  
+                  <source src="https://64.media.tumblr.com/7ade64e9176614495d58ae21224c3880/c116f11d9c8fb2f3-df/4dd2d22c5c25b69cbf373244d94a36a396ecf72a.mp3" type="audio/mpeg">
+                  Your browser doesn't support this audio element!
+                </audio>
+              </div>
+  
+              <p>
+                <b>WHO:</b> LIFE, off their 2022 album <a href="https://lifebanduk.bandcamp.com/album/north-east-coastal-town">North East Coastal Town</a>
+                <br>
+                <br>
+                <b>WHAT:</b> Alternative. I'd hesitate to call them purely punk on account of I don't really know my punk, but definitely punk-adjacent
+                <br>
+                <br>
+                <b>WHY:</b> If you've never experienced the catharsis of shouting along to "<em>my imperfect body houses my imperfect mind!</em>" 
+                then I don't know what I can say to you
+                <br>
+                <br>
+              </p>
+  
+              <br>
+              <hr>
+              <br>
+  
+              <div class="musicPlayer">
+                <img src="../_assets/images/Sick-Beats/DTTM-cover.jpg" alt="The cover art for the album Death To The Mechanisms.">
+                <h2>Rose Red</h2>
+                <h3>The Mechanisms</h3>
+                <audio controls>
+                  <source src="https://64.media.tumblr.com/6e44544a6923fd8509d87d94ffe8ee71/0cce09b0fc2ced82-05/2366366815d5c0c33e6ca108a47aa523b93e2234.mp3" type="audio/mpeg">
+                  Your browser doesn't support this audio element!
+                </audio>
+              </div>
+  
+              <p>
+                <b>WHO:</b> The Mechanisms, from the album of their final concert, <a href="https://themechanisms.bandcamp.com/album/death-to-the-mechanisms">Death to the Mechanisms</a>
+                <br>
+                <br>
+                <b>WHAT:</b> A steampunk cabaret band who take classic fairytales and myths, set them in space, and make songs about them
+                <br>
+                <br>
+                <b>WHY:</b> This is the only proper album (ie, not just a Youtube video) of a live performance, and I love the energy
+                and how you can hear the audience singing along
+                <br>
+                <br>
+              </p>
+            </div>
+
+
+
+             
+
+            
+
+            <br>
+            <hr>
+            <br>
+
+            
 
 
 <!--             
