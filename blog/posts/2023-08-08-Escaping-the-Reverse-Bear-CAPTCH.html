@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="../../_js/changeTheme.js"></script>
+    <script src="../../_js/showBox.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TechElement</title>
+    <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+    <script src="../../_js/showBox.js"></script>
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+
+
+          <main>
+            <h1>Escaping the Reverse Bear CAPTCHA</h1>
+            <h2>Or, an absolute beginner's guide to using Selenium and Python</h2>
+            <h4 id="postDate"></h4>
+            <hr>
+
+
+            <p>
+              Somewhat recently I watched Saw, and, in an entirely 
+              normal human decision, decided to put a Saw trap of my 
+              own on this very site. If you've not already seen it, 
+              it's in the-back.
+              <br><br>
+              (or, less cryptically, <a href="https://techelement.neocities.org/the-back/reverse-captcha">here.</a>)
+              <br><br>
+              What it is is a form that wants the answer to a 
+              mostly-randomly generated maths problem. If you get 
+              it wrong, or are too slow, it gets sad. There is no way that as a 
+              human being you will be able to read the question, 
+              solve it, and type in the answer in the one second 
+              you're given. So, how do you do it?
+            </p>
+
+            <br><br>
+
+            <h3>Web scraping time</h3>
+
+            <p>
+              Web scraping is the act of using a machine to get 
+              the content of a webpage. We're going to be using Selenium, which is “a suite of tools used for automating web browsers”, their words. It lets us scrape pages and, importantly, interact with them automatically.
+              <br><br>
+              Also, if you know a more efficient/more fun/otherwise 
+              different way of doing it, by all means tell me! I am 
+              only using Selenium because I made the Saw trap to 
+              more or less force me to learn the basics of Selenium.
+            </p>
+
+            <b onclick="showText('install')">Wait real quick, how do I install Selenium? (click me)</b>
+            <div id="install" style="display: none;">
+              <p>
+                First, install Python. I have version 3.10.12, but so long as your version is 3.7.x or above you should be fine.
+                <br><br>
+                Then, on your command line of choice type `pip install selenium`. Selenium is actually available for use in a bunch of languages, like C#, Ruby, and even Haskell. I'm using it on Python because I like Python :]
+              </p>
+            </div>
+
+            <br><br>
+
+            <div class="box">
+              <p>
+                from selenium import webdriver<br>
+                url = "https://techelement.neocities.org/the-back/reverse-captcha"<br>
+                driver = webdriver.Chrome()<br>
+                driver.get(url)
+              </p>
+            </div>
+
+
+            <p>
+              We start off setting things up. 
+              <br><br>
+              A WebDriver is an API used to interact with a 
+              specific browser. It means you don't have to write slightly different code to make sure it works for every single implementation of the browser, you just need to use a different WebDriver. 
+              <br><br>
+              You'll see when we run the finished code that Selenium will open itself up a Chrome browser to the URL we gave it, just as specified.
+            </p>
+
+            <br><br>
+
+            <div class="box">
+              <p>
+                equationElement = driver.find_element("id", "equation")<br>
+                textBox = driver.find_element("id", "ans")<br>
+                sendButton = driver.find_element("xpath", "//button")
+              </p>
+            </div>
+
+            <p>
+              Here we start finding parts of the webpage's HTML to interact with.
+              <br><br>
+              Selenium lets you do this multiple ways. ID is straightforward enough - there should be exactly one HTML element with any given ID, and we send Selenium off to find it. This requires knowing the IDs of the desired HTML elements, which means it's off to InspectElement to find out what they are!
+              <br><br>
+              XPath is more dynamic, you can search by the absolute path of the object in the page (eg, the third option of the first form), or by the attributes it has (eg, the form option with the text “Earth”). In this case, we're selecting the button. It's a very vague search, but since there's only one button on the page, it works fine.
+            </p>
+
+            <br><br>
+
+            <div class="box">
+              <p>
+                eqText = equationElement.get_attribute("innerHTML")<br>
+                eqTextCut = eqText[:-2]
+              </p>
+            </div>
+
+            <p>
+              So we got the equation on the screen, but the thing is we don't need  the entire thing. We don't need to know the full details of the HTML, just what text it displays to the reader. First, we get the inner HTML, aka the text:
+              <br><br>
+              0.5326941760300602 * 0.29286404810724576 =
+              <br><br>
+              Then, we chop the final two characters off the end, because we don't need the “ =” for our next step
+              <br><br>
+              0.5326941760300602 * 0.29286404810724576
+            </p>
+
+            <br><br>
+
+            <div class="box">
+              <p>
+                textBox.send_keys(eval(eqTextCut))<br>
+                sendButton.click()<br><br>
+                input()
+              </p>
+            </div>
+
+            <p>
+              eval(eqTextCut) takes a string, in this case the multiplication from earlier, and treats it like a mathematical equation, returning the answer as an integer. Selenium then types the answer into the text box, and presses the <b>I'm not a robot button</b>.
+              <br>
+              (input() is there to stop Selenium automatically closing the page once it's done, instead waiting for the enter key to be pressed in the Python terminal.)
+            </p>
+
+            <br><br>
+
+            <img src="../../_assets/images/reverseCAPTCHA/sawTrap.jpg" alt="A screenshot of the reverse cAPTCHA page. A popup has appeared reading 'Correct! Close this popup for your reward'">
+
+            <br><br>
+
+            <p>
+              Hacker voice: we're in.
+            </p>
+
+
+
+            <div class="box">
+              <p>bloop</p>
+            </div>
+
+            <hr>
+            <div id="nextprev"></div>
+            <hr>
+            
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb">  
+              if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F"+"&opts=16798&num=10&ts=1676463200376");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
+            </script>
+            <!-- end www.htmlcommentbox.com -->
+          </main>
+          
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+  </body>
+</html>

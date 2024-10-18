@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>TechElement</title>
+        <link rel="icon" type="imagr/x-icon" href="../_assets/images/icon.png">
+
+        <link id="theme" rel="stylesheet" title="theBack" href="../_css/back-style.css" type="text/css" media="all">
+        <script src="../_js/customHTML.js"></script>
+        <script src="../_js/showBox.js"></script>
+    </head>
+
+    <body>
+
+        <back-navbar></back-navbar>
+
+        <div class="main">
+
+            <p>
+                I say "games corner" I really mean "one, singular, game corner", 
+                and the game in question is based off code found 
+                <a href="https://webdesign.tutsplus.com/tutorials/create-an-html5-canvas-tile-swapping-puzzle--active-10747">here</a>!
+                <br><br>
+                There are currently a bunch different images picked from at random, ranging 
+                from artworks I like to... other images I had lying around.
+            </p>
+
+            <div class="game">
+                <canvas id="canvas"></canvas>
+                <br>
+                <label for="difficulty">Difficulty</label>
+                <input type="range" min="2" max="16" value="4" id="difficulty"/>
+                <script src="../_js/puzzle.js"></script>
+            </div>
+
+            <br><br>
+
+            <b onclick="showText('images')">Click for image credits:</b>
+            <div id="images" style="display: none;">
+                <ul>
+                    <li>
+                        Clown To Clown Communication, a meme I 
+                        downloaded from somewhere once
+                    </li>
+                    <li>
+                        A salamander as used in heraldry, taken from 
+                        Wikipedia
+                    </li>
+                    <li>
+                        A line from Dead in the Water, a song from Operation 
+                        Mincemeat: A New Musical
+                    </li>
+                    <li>
+                        Sensitive Skin by Graham Crowley
+                    </li>
+                    <li>
+                        The Three Graces by Peter Paul Rubens
+                    </li>
+                </ul>
+            </div>
+            
+
+        </div>
+
+    </body>
+</html>

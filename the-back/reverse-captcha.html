@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>TechElement</title>
+        <link rel="icon" type="imagr/x-icon" href="../_assets/images/icon.png">
+
+        <link id="theme" rel="stylesheet" title="theBack" href="../_css/back-style.css" type="text/css" media="all">
+        <script src="../_js/customHTML.js"></script>
+        <script src="../_js/showBox.js"></script>
+        <script src="../_js/reverseCAPTCHA.js"></script>
+    </head>
+
+    <body onload="init()">
+
+        <back-navbar></back-navbar>
+
+        <div class="main">
+            <p>
+                Welcome to the reverse bear CAPTCHA, something 
+                that has absolutely no similarity to the reverse 
+                bear trap from Saw except for the overly contrived name.
+            </p>
+
+            <h1>Let's play a game</h1>
+
+            <img src="../_assets/dancingBilly.gif">
+            <br><br>
+
+            <p>
+                Solve the equation below. If you manage it, you get to live. 
+                If you don't, well... that would be a shame. Better be quick.
+            </p>
+
+            <br>
+
+
+            <form onsubmit="displayTimeTaken()" name="reverseCAPTCHA">
+                
+
+                <input type="submit" disabled style="display: none;"></buttton>
+
+                <p id="equation"></p>
+
+                <input type="text" id="ans" name="ans" >
+                <br><br>
+                <button type="button" onclick="trackTime()">
+                    I'm not a robot
+                </button>
+            </form>
+
+            <!-- <p id="timeTaken"></p> -->
+
+
+            <br><br><br>
+            <p onclick="showText('hint')">(Click me to reveal a hint)</p>
+            <div id="hint" style="display: none;">
+                <p>
+                    "Reverse bear CAPTCHA" isn't <em>just</em> a silly name. 
+                    If a regular CAPTCHA aims to create a problem humans can solve, but 
+                    machine's can't, what might the point of a reverse CAPTCHA be?
+
+                    <br><br>
+
+                    <a href="../blog/posts/2023-08-08-Escaping-the-Reverse-Bear-CAPTCHA.html">
+                        I also wrote about my solution!
+                    </a>
+                </p>
+            </div>
+        </div>
+
+    </body>
+</html>

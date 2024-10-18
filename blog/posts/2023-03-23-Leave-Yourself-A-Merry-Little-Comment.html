@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="../../_js/changeTheme.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TechElement | Comments... 2!</title>
+    <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+
+          <main>
+            <h1>A Comment Box Update</h1>
+            <h2>Or, now you too can leave your indelible mark on the internet</h2>
+            <h4 id="postDate"></h4>
+            <hr>
+
+            <div class="box">
+                <p><b>If you were about to share sensitive/legally questionable information on some random web page then the following will make no difference and frankly you may be beyond help</b></p>
+            </div>
+
+            <p>
+                <br>
+                So <a href="../..//blog/posts/2023-02-18-On-Comment-Boxes.html">my first post</a> was talking about why none of the options I'd looked at for comment box functionality really appealed. Or at least, they <em>didn't</em>.
+                <br><br>
+            </p>
+
+            <h3>We return to HTMLcommentbox</h3>
+
+            <p>
+                To summarise: you're able to leave comments using <a href="https://www.htmlcommentbox.com/">HTMLcommentbox</a>! The main reasons it attracted me were that it doesn't link to anything like Facebook, nor does it track you for the purposes of targeted advertising (there are no ads at all, even). Scroll to the bottom of the page to speak your piece, or read on to hear about their privacy policy. 
+                <br><br>
+                And to quote the eternally famous Mario...
+                <br><br>
+            </p>
+
+            <h3>Let's-a go!</h3>
+
+            <p>
+                Instead of making anything easy, Countable, the parent company of HTMLcommentbox, have provided three important documents and pages: the privacy policy, the terms document, and the terms and conditions. 
+                <br><br>
+                Working in reverse order, the <a href="https://www.htmlcommentbox.com/terms_and_conditions.html">terms and conditions</a> is the legal warranty part. Like any good legal warranty, it operates under the principle of "if it breaks on you that's almost certainly not an us problem". Nothing overly interesting here.
+                <br><br>
+                The <a href="https://www.htmlcommentbox.com/static/terms.pdf">terms</a> have more to them, although, that being said, nothing unfamiliar if you've ever read the T&Cs for anything. It's the stuff that gives them the right to take action if they notice you posting abusive/offensive ("in [their] sole discretion"), or that violates something's copyright. They have a specific clause about taking no responsibility for any deaths resulting from use of the service, which seems overly specific, but I guess in the legal world you can never cover your bases enough. There are two bits here relevant to how they treat your data:   
+                <br>
+            </p>
+
+            <img class="ss" src="../../_assets/images/Comments-Update/term-2.4.jpg" alt="By posting User Content, you grant Countable the right and license to use, modify, publicly perform, display, reproduce and distribute such User Content on and through the Services. You retain any and all of your rights to any User Content you submit and are responsible for protecting those rights">
+
+            <p>
+              (where User Content refers to comments left)
+              <br><br>
+              and
+            </p>
+
+            <img class="ss" src="../../_assets/images/Comments-Update/no-guarantees.jpg" alt="Without limiting the generality of the foregoing, we make no guarantees in relation to the following: (a) the Services will meet your requirements or expectations; (b) the Services will be uninterrupted, timely, secure, or error-free; (c) the accuracy, quality or reliability of the Services; (d) any information you provide or we collect will not be disclosed to third parties; or (e) third parties will not use your confidential information in an unauthorized manner. Under no circumstances will we be responsible for any loss or damage, including personal injury or death, resulting from anyone's use of the Services or any conduct or interactions between users of our Services.">
+
+            <p>
+                specifically the parts about disclosing information to third parties.
+                <br><br>
+                The first image is one of those things which you read, hate, and then remember how it's not that much different from anything else you'll see online. The <em>second</em> image gave me more pause.
+                <br><br>
+                <b>Why are you being so vague. If you <em>are</em> passing information to a third party, why not be open about it. What's your problem.</b>
+                <br><br>
+                It's fair to assume the worst from this, because we're on the modern internet and life is a nightmare. So, what exactly are they <em>maybe</em> disclosing to third parties?
+                <br><br>
+              </p>
+
+            <h3><a href="http://bool.countable.ca/privacy.pdf">The privacy policy itself</a></h3>
+
+            <p>
+                Not much, as it turns out. 
+                <br><br>
+                Well- as mentioned above, you have agreed that Countable has the right to access and use anything you leave in a comment. Honestly though? This is Internet Safety For Dummies - don't put something online that you don't want the world to see. 
+                <br><br>
+                It's similar with other data - they only collect it if you give it to them directly:
+            </p>
+
+            <img class="ss" src="../../_assets/images/Comments-Update/personal-info-collection.jpg" alt="1. Collection of Personal Information 1.1 Countable collects your Personal Information to provide you with the best service possible. “Personal Information” may include your name, age, home address, phone number, email address. We may collect your Personal Information from any data you input into our Site, or any information you send us via correspondence such as telephone, email, mail, fax or directly through our Site.">
+
+            <p>
+              So, if you email them, they now have your email! If you send them a letter with your name and return address on it, they've got that too! I've got to say - it's almost refreshing to read something that doesn't use your device's geolocation data to figure out where you are.
+              <br><br>
+              In terms of what they use this for, they provide a list which - and you might want to sit down for this one - <em>doesn't</em> include the words "shared with our advertising partners".
+            </p>
+
+            <img class="ss" src="../../_assets/images/Comments-Update/personalInfoUses.jpg" alt="1.2 We will only collect Personal Information in order to: (a) verify identity; (b) identify your preferences; (c) open and manage an account; (d) ensure you receive a high standard of service; (e) meet regulatory requirements; or (f) any other legal reasons as applied to your use of the Services.">
+
+            <p>
+              Lots of this is self-explanatory. If you make an account, you hand over your email, and they will store that so that they have it next time you want to log in. "Other legal reasons" is an unhelpfully vague statement and is, in my non-professional opinion, the kind of thing you put in your policy just in case you find yourself in deep legal shit.
+              <br><br>
+            </p>
+
+            <div class="box">
+              <p>
+                There's no writing (or tweets that don't look bot-generated and aren't from 2013) talking about any big issues HTMLcommentbox has had - which I'm more inclined to think is because it's such a small service that no-one has bothered trying to hack it, rather than an indication that they're entirely without fault, but maybe I'm just a suspicious bastard.
+              </p>
+            </div>
+
+            <p>
+              <br>
+              All in all, it's a service that I'm happy to use, especially when considering my recently acquired deep hatred for Disqus.
+              <br><br>
+            </p>
+
+            <h3>So, yeah</h3>
+
+            <p>
+              Don't like what I'm saying? Really love what I'm saying? Put the messenger pigeons away because now you can leave a comment on this very site!
+              <br><br>
+              (please ignore how the RSS feed button is miles down the page. I don't know why it's doing that either)
+            </p>
+
+            <hr>
+            <div id="nextprev"></div>
+            <hr>
+
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb">  
+              if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F"+"&opts=16798&num=10&ts=1676463200376");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
+            </script>
+            <!-- end www.htmlcommentbox.com -->
+          </main>
+          
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>TechElement</title>
+        <link rel="icon" type="imagr/x-icon" href="../_assets/images/icon.png">
+
+        <link id="theme" rel="stylesheet" title="theBack" href="../_css/back-style.css" type="text/css" media="all">
+        <script src="../_js/customHTML.js"></script>
+        <script src="../_js/butterflyInfo.js"></script>
+    </head>
+
+    <body style="background-image: url('../_assets/images/Butterfly-Room/field.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+        
+
+
+        <div class="main">
+
+            <div class="sidenav">
+                <a style="color: darkcyan; background-color: aliceblue;" href="index.html">Go home</a>
+            </div>
+    
+            <div id="infobox" style="display: none;">
+                <h2 id="name">Butterfly Name</h2>
+                <h4 id="species">Butterflius Latinus</h4>
+                <hr>
+                <p id="info"> lorem ipsum dolor</p>
+                <hr>
+                <a style="color: rgb(222, 219, 219);" href="#" id="gifSource">Img source</a>
+                <hr>
+                <a onclick="hideInfoBox()" href="#" style="color: rgb(222, 219, 219);" id="closeInfo">Close</a>
+            </div>
+            
+    
+    
+            <img class="imgHover" onclick="showInfoBox('peacock')" style="position: fixed; top: 85%; right:75%; height: 80px; width:auto" src="../_assets/images/Butterfly-Room/peacock.gif" alt="Peacock butterfly">
+    
+            <img class="imgHover" onclick="showInfoBox('monarch')" style="position: fixed; top: 35%; right: 15%; height: 120px" src="../_assets/images/Butterfly-Room/monarch.gif" alt="Monarch butterfly">
+
+            <img class="imgHover" onclick="showInfoBox('smallWhite')" style="position: fixed; top: 50%; right: 50%; height: 80px;" src="../_assets/images/Butterfly-Room/cabbageWhite.png" alt="Small white butterfly">
+        
+            <img class="imgHover" onclick="showInfoBox('redAdmiral')" style="position:fixed; top:10%; right:65%; height: 70px" src="../_assets/images/Butterfly-Room/redAdmiral.png" alt="Red admiral butterfly">
+        
+        </div>
+
+        
+    </body>
+</html>

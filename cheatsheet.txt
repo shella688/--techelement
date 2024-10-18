@@ -1,0 +1,5 @@
+bundle exec jekyll serve
+- to run site
+
+neocities push .
+- to upload site to neocities

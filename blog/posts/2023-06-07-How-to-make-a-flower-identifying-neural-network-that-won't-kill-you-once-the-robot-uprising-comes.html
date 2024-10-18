@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="../../_js/changeTheme.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TechElement | Making Neural Networks</title>
+    <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+        <script src="../../_js/showBox.js"></script>
+
+
+
+          <main>
+            <h1>How to make a flower-identifying neural network that won't kill you once the robot uprising comes</h1>
+            <h2>And may our new machine lords have mercy on our souls</h2>
+            <h4 id="postDate"></h4>
+            <hr>
+
+
+
+            <h3>Intro</h3>
+
+            <p>
+                I, a university student, am being forced to make projects for a 
+                university course that I chose to take in a subject I enjoy 
+                learning about.
+                <br><br>
+                Most recently this manifested in a project to make and train a neural network capable of classifying the Oxford Flowers-102 dataset. As image datasets go, it's a famous one, containing 7169 images of 102 different types of flowers seen around the UK. 
+                <br><br>
+                For any given flower image, you have a 0.98% chance of getting it right just by guessing, so all we had to do was make a network with a higher accuracy than that. Simple, right?
+                <br><br>
+                (and, before we go further, this very much was a team project, shout out to T, A, M, and T, we did pretty good for a bunch of people who'd never used Pytorch before)
+            </p>
+
+            <br><br>
+
+            <h3>Step 1</h3>
+
+            <p>
+                Do not do this.
+                <br><br>
+                I cannot emphasise enough that, for a training set of this size, 
+                you should use a pretrained model. These models have been trained 
+                on datasets containing <em>millions</em> of images and will do a 
+                far better job of identifying flowers than the one you trained from scratch on about 1000. What’s more, your model is going to be prone to what we call overfitting, when a neural network is really good at dealing exactly with the data it got trained on, but a little bit shit at coping with anything else.
+                <br><br>
+                In these conditions, making a model with an accuracy greater than even 55% is going to be an unreasonably difficult task.
+            </p>
+
+            <br><br>
+
+            <h3>Step 2</h3>
+            <p>Make your model.</p>
+
+            <br><br>
+
+            <h3>Step 3</h3>
+            <p>Profit.</p>
+
+            <br><br>
+
+
+            <h3>No wait can we go back to step 2</h3>
+
+            <p>
+                In the best Blue Peter tradition, here's a neural network we made earlier. 
+                I'm going to talk through what we did and why we did it, and you can all 
+                follow along at home, with the code shown in boxes. This article also 
+                has some Fun Secret Sidebars - click on 
+                a title with no content below it, like the one below, to show the text.
+            </p>
+
+            <br>
+
+            <h4 onclick="showText('whatIsNN')">Okay but like what <em>is</em> a neural network? -></h4>
+            <p id="whatIsNN" style="display: none;">
+                Neural networks are a subset of machine learning, which itself is a subset of 
+                artificial intelligence. They're programs which work somewhat like the human 
+                brain, forming connections and spotting patterns and, when faced with new data, 
+                uses those connections to take a guess at what output to provide. Something like 
+                ChatGPT is a neural network.
+                <br><br>
+                In this instance, we're making a specific type known as a convolutional neural 
+                network (CNN), which will use a fun bit of maths called convolution (combining 
+                two functions to get a third one) to help it identify key parts of an image. 
+                Using a filter called a kernel, it builds a feature map of the image.
+            </p>
+
+            <h4>Ye olde imports</h4>
+
+            <div class="box">
+                <p>
+                    import math<br>
+                    import numpy as np<br>
+                    import matplotlib.pyplot as plt<br>
+                    <br><br>
+                    import torch<br>
+                    import torch.nn as nn<br>
+                    from torch.optim import AdamW<br>
+                    import torchvision<br>
+                    import torchvision.transforms as transforms<br>
+                    from torchvision import datasets<br>
+                    from torch.utils.data import Dataset<br>
+                    from torch.utils.data import DataLoader<br>
+                    from torch.utils.data import random_split<br>
+                    from torch.utils.data import ConcatDataset<br>
+                    <br><br>
+                    import scipy.io
+                    </p>
+            </div>
+
+            <p>
+                Pytorch is a module used for machine learning, with lots of useful 
+                modules allowing you to load the dataset, transform it, and 
+                optimise your model. Numpy is used to draw graphs. Math sends us to 
+                the other side of the Atlantic where we awaken, blinking, in the 
+                USAmerican world of singular mathematic.
+            </p>
+
+            <br>
+
+            <h4>Load up the images</h4>
+
+            <div class="box">
+                <p>
+                    trainingTransform = transforms.Compose([<br>
+                    transforms.Resize(224), <br>
+                    transforms.RandomRotation(90), <br>
+                    transforms.CenterCrop(224), <br>
+                    transforms.RandomHorizontalFlip(),<br>
+                    transforms.RandomVerticalFlip(),<br>
+                    transforms.ToTensor(),<br>
+                    transforms.Normalize(0,1) <br>
+                ])<br>
+                <br><br>
+                trainingTransformBrightness = transforms.Compose([<br>
+                    transforms.Resize(224),<br>
+                    transforms.RandomRotation(90),<br>
+                    transforms.CenterCrop(224),<br>
+                    transforms.ColorJitter(contrast=(0.5, 0.9), brightness=0.05),<br>
+                    transforms.ToTensor(),<br>
+                    transforms.Normalize(0,1)<br>
+                ])<br>
+                <br><br>
+                trainingTransformSaturation = transforms.Compose([<br>
+                    transforms.Resize(224),<br>
+                    transforms.RandomRotation(90),<br>
+                    transforms.CenterCrop(224),<br>
+                    transforms.ColorJitter(saturation=(0.5, 0.9), hue=0.2),<br>
+                    transforms.ToTensor(),<br>
+                    transforms.Normalize(0,1)<br>
+                ])<br>
+                <br><br>
+                nonTrainTransform = transforms.Compose([<br>
+                    transforms.Resize(224),<br>
+                    transforms.CenterCrop(224),<br>
+                    transforms.ToTensor(),<br>
+                    transforms.Normalize(0,1)<br>
+                ])<br>
+                <br><br>
+                trainingSet = datasets.Flowers102(root="./flowers", split="train", download=True, transform=trainingTransform)<br>
+                trainingSet2 = datasets.Flowers102(root="./flowers", split="train", download=True)<br>
+                trainingSetBright, trainingSetSat = random_split(trainingSet2, (510, 510))<br>
+                trainingSetSat.dataset.transform = trainingTransformSaturation<br>
+                trainingSetBright.dataset.transform = trainingTransformBrightness<br>
+                trainingSet = ConcatDataset([trainingSet, trainingSetBright, trainingSetBright])<br>
+                <br><br>
+                validationSet = datasets.Flowers102(root="./flowers", split="val", download=True, transform=nonTrainTransform)<br>
+                
+                </p>
+            </div>
+
+            <p>
+                Here, we prepare to Do Things to innocent, unsuspecting images.
+                <br><br>
+                There are three sets. First, validationSet and testingSet will be used at the end to see how good our CNN is at identifying flowers (validation will be used throughout for peace of mind, whilst testing will be used to get a final accuracy). Each image in these two sets gets resized into a square, and normalised. toTensor() simply converts the image to a format that our neural network can work with.
+                <br><br>
+                The important part is the two trainingSets, which is made up of a few thousand flower images as well as a label saying what flower each is of. The two are, initially, identical, being resized into squares, normalised, and rotated randomly between 0 and 90 degrees. However, we next take trainingSet2, split it in half, and randomly adjust the brightness of the images in one half whilst doing the same to the saturation of those in the other half. Then, all of the trainingSets are combined into one big one.
+                <br><br>
+                We do this to add some variety to the training data. Remember when I mentioned that our handmade network won’t be trained on enough data to have a good accuracy? This process is to increase the data available, as well as making some of that data different enough that it almost makes up for the fact we don’t have millions of images at our disposal.
+                <br><br>
+                The below code displays 4 random training images, just to look at 'em.
+            </p>
+
+            <div class="box">
+                <p>
+                    figure = plt.figure(figsize=(10,10))<br>
+                    col, row = 2, 2<br>
+                    for i in range(1, 5):   
+                    <blockquote>  <!-- misuse of bloackquote for fun and profit -->
+                        randImg = torch.randint(len(trainingSet), size=(1,)).item() <br>
+                        img, label = trainingSet[randImg]<br>
+                        figure.add_subplot(row, col, i)<br>
+                        plt.title(label)<br>
+                        plt.axis(False)<br>
+                        plt.imshow(img.squeeze().permute(1,2,0))<br>
+                        plt.show()<br>
+                    </blockquote> 
+                </p>
+            </div>
+            <br>
+            <img class="ss" src="../../_assets/images/NN/flowers.jpg">
+            <br>
+            <p>(the labels for this dataset are all numbers. For reference, 
+                these flowers are, from top left clockwise, a wallflower, a fire 
+                lily, a petunia, and a gaura)</p>
+
+            <br>
+            <h4 onclick="showText('gpuAside')">Quick GPU sidebar -></h4>
+
+            <div id="gpuAside" style="display: none;">
+                <p>
+                    If you want to train a CNN, you will want a powerful computer, 
+                    or at least one hooked up to a graphics processing unit. Well, 
+                    okay, you don't <em>need</em> a GPU. You could sit around for 
+                    five days waiting for your CPU to do all the calculations. 
+                    You could even try running it on your mobile phone's processor, if you’re stuck in the wilderness and need a fire.
+                    <br><br>
+                    I used Google Colab which, for free, lets you use a T4 GPU, and 
+                    if you don't have a GPU of your own would <em>heavily</em> 
+                    recommend you do the same. The below code lets you know if 
+                    you're using a CPU or CUDA (platform that allows the use of GPUs)
+                </p>
+                <div class="box">
+                    <p>
+                        if torch.cuda.is_available():
+                        <blockquote>
+                        device = torch.device('cuda:0')
+                        </blockquote>
+                        else:
+                        <blockquote>
+                        device = torch.device('cpu')
+                        </blockquote>
+                        print(device)
+
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                And with all that out the way, we can start building our actual network!
+                <br><br>
+                I say <em>our</em>, I more accurately mean our implementation of the model also known as VGG11, because quite frankly if it’s not broken don’t fix it. Also our own attempts got a grand total of 7% accuracy. Nobody liked that.
+            </p>
+
+            <br>
+
+            <h4>Make a network that will do stuff</h4>
+
+            <div class="box">
+                <p>
+                    class CNN(nn.Module):
+                    <blockquote>
+                        def __init__(self):
+                        <blockquote>
+	                        super().__init__()<br>
+	                        self.netLayers = nn.Sequential(<br>
+                            <br>
+    	                    nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, padding=1),<br>
+    	                    nn.ReLU(),<br>
+    	                    nn.BatchNorm2d(64),<br>
+    	                    nn.MaxPool2d(2,2),<br>
+    	                    nn.BatchNorm2d(64),<br>
+                            <br>
+                            nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3, stride=(1,1), padding=1),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm2d(128),<br>
+                            <br>
+                            nn.MaxPool2d(2,2),<br>
+                            nn.BatchNorm2d(128),<br>
+                            <br>
+                            nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, stride=(1,1), padding=1),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm2d(256),<br>
+                            <br>
+                            nn.Conv2d(in_channels=256, out_channels=256, kernel_size=3, stride=(1,1), padding=1),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm2d(256),<br>
+                            <br>
+                            nn.MaxPool2d(2,2),<br>
+                            nn.BatchNorm2d(256),<br>
+                            <br>
+                            nn.Conv2d(in_channels=256, out_channels=512, kernel_size=3, stride=(1,1), padding=1),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm2d(512),<br>
+                            <br>
+                            nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, stride=(1,1), padding=1),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm2d(512),<br>
+                            nn.MaxPool2d(2,2),<br>
+                            nn.BatchNorm2d(512),<br>
+                            <br>
+                            nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, stride=(1,1), padding=1),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm2d(512),<br>
+                            nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, stride=(1,1), padding=1),<br>
+                            nn.BatchNorm2d(512),  <br>
+                            nn.MaxPool2d(2,2),<br>
+                            nn.BatchNorm2d(512),<br>
+                            nn.Flatten(),<br>
+                            <br>
+                            nn.LazyLinear(4096),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm1d(4096),<br>
+                            nn.Dropout(0.8),<br>
+                            <br>
+                            nn.LazyLinear(4096),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm1d(4096),<br>
+                            nn.Dropout(0.8),<br>
+                            <br>
+                            nn.LazyLinear(1000),<br>
+                            nn.ReLU(),<br>
+                            nn.BatchNorm1d(1000),<br>
+                            nn.Dropout(0.5),<br>
+                            <br>
+                            nn.Linear(1000, 102), <br>
+                        
+                        )</blockquote>
+                        
+                        def forward(self, x):
+                        <blockquote>
+                            result = self.netLayers(x)<br>
+                            return result<br>
+                        </blockquote>
+                    </blockquote>
+                </p>
+            </div>
+
+            <p>
+                What we have here is a series of layers that work together to analyse 
+                the features in an image and assign it to a flower. 
+                <br><br>
+                The convolutional layers apply a mathematical function between the 
+                input image and a filter across to produce a third function representing 
+                a “feature map” - information about the image such as edges and corners. 
+                The in_channels parameter from the first Conv layer is 3, representing 
+                the three colour channels present in a RGB colour image. From there, 
+                the number of channels can be modified as you desire, so long as the input channels of a given layer is the same number as the output channels from the previous layer.
+                <br><br>
+                ReLU is an activation function. It makes the neural network less linear (if it was fully linear, every single layer and neuron in each layer could just be replaced by one function, and would be really bad at dealing with images). ReLU converts the sum of the inputs to one single output. If this sum is greater than zero, the sum is outputted. Otherwise, 0 is.
+                <br><br>
+                Pooling layers summarise the features found, and decrease the size of the feature map to reduce the complexity of further calculations that'll get carried out on it. Maximum pooling, specifically, finds and keeps only the biggest number in a given subregion of the image, as demonstrated in the handy image below:
+            </p>
+
+            <img class="ss" src="../../_assets/images/NN/pooling.jpg" alt="A 4x4 grid, with each box containing a number, is divided into four 2x2 coloured sections. The largest number in each section is kept, reducing the size of the overall grid to a 2x2 square">
+
+            <p>
+                Batch normalisation layers do, essentially, what they say they do. They take an input batch of images and normalise them, to make the network train faster and be more stable.
+                <br><br>
+                After we work through a couple of those, we use a flatten layer to ensure the input is in the form of a one-dimensional array (this will be needed for later).
+                <br><br>
+                We finish with linear layers (which are also called fully connected layers). These compile all the information gathered from the previous layer, and then classify the input image. The difference between Linear and LazyLinear is that LazyLinear doesn’t need the input number of features specified and will just figure that out itself (it’s lazy like that!). The exact values for each parameter are, again, able to be changed, so long as the output is 102 - the same as the number of flower classes.
+                <br><br>
+                Between some of the linear layers are dropout layers. These randomly drop some of the neurons and prevent them from having any impact on the overall output, in order to stop overfitting.
+                <br><br>
+                All the forward function does is work through each of the layers in a sequential order.
+                <br><br>
+                Simple, right?
+            </p>
+
+            <br>
+
+            <h4>Get the network you just made to do the stuff</h4>
+
+            <div class="box">
+                <p>
+                    def epochCountTrain(trainLoader, cnn, optimizer, lossFunction):
+                    <blockquote>
+                        totalLoss, correct = 0, 0<br>
+                        size = len(trainLoader.dataset)<br>
+                        for i, data in enumerate(trainLoader, 0):
+                        <blockquote>
+                            input, labels = data<br>
+                            input = input.to(device)<br>
+                            labels = labels.to(device)<br>
+                            optimizer.zero_grad()<br>
+                            output = cnn(input)<br>
+                            loss = lossFunction(output, labels)<br>
+                            loss.backward()<br>
+                            optimizer.step()<br>
+                            totalLoss += loss.item()<br>
+                            correct += (output.argmax(1)==labels).sum().item()<br>
+                            <br>
+                            if i % 20 == 0:
+                            <blockquote>
+                                loss, currentLoss = loss.item(), (i + 1) * len(input)<br>
+                                print(f"loss: {loss:>7f}	[{currentLoss:>5d}/{size:>5d}]")<br>
+                            </blockquote>
+                        </blockquote>                      
+                        epochTrainLoss.append(float(loss))<br>
+                        epochTrainAccuracy.append(round((correct/size)*100, 1))<br>
+                        print(f"\nAvg train loss: {(totalLoss/len(trainLoader)):>8f}")<br>
+                        print(f"Train accuracy = {((correct/size) * 100): >0.1f}%")
+                    </blockquote>
+
+                </p>
+            </div>
+
+            <p>
+                This function will run the model on the training dataset for a given 
+                number of epochs, the exact value of which we'll define later. Each 
+                epoch is one run through the entire set of images - more can improve 
+                accuracy up to a point, but too many can lead to overfitting.
+                <br><br>
+                For each image in the training dataset, we feed it into the network. 
+                Then, when we get the output, we use the loss from this output to go 
+                <em>back through</em> the network and adjust its parameters to, hopefully, 
+                make it better and more accurate.
+                <br><br>
+                The loss function works out how wrong the network's guess is. There are loads of different functions out there to calculate loss, but by far the most popular one (and the one we will use, which will come up later) is cross entropy loss.
+            </p>
+
+            <br>
+
+            <div class="box">
+                <p>
+                    def validation(valLoader, cnn, lossFunction):
+                    <blockquote>
+                        valSize = len(valLoader.dataset)<br>
+                        correct = 0<br>
+                        loss = []<br>
+                        with torch.no_grad(): 
+                        <blockquote>
+                            for batch in valLoader:
+                            <blockquote>
+                                input, labels = batch<br>
+                                input = input.to(device)<br>
+                                labels = labels.to(device)<br>
+                                prediction = cnn(input)<br>
+                                loss.append(lossFunction(prediction, labels).item())<br>
+                                correct += (labels == prediction.argmax(1)).sum().item()
+                            </blockquote>
+                        </blockquote>
+                        epochValLoss.append((np.average(loss)))<br>
+                        epochValAccuracy.append(round((correct/valSize)*100, 1))<br>
+                        print(f"Accuracy on validation set = {((correct / valSize) * 100):>0.1f}%")<br>
+                        print(f"Average loss on validation set = {(np.average(loss))}\n")
+                    </blockquote>
+                </p>
+            </div>
+
+            <p>
+                After the network has been fully trained, we will 
+                then give the network new, unseen, images from the validation set. 
+                The code is very similar, except this time we <em>don't</em> want to change 
+                the parameters of the model, just feed it images and see what result it 
+                gives us.
+            </p>
+
+            <br>
+
+            <div class="box">
+                <p>
+                    def test(testLoader, cnn):
+                    <blockquote>
+                        testSize = len(testLoader.dataset)<br>
+                        correct = 0<br>
+                        with torch.no_grad():
+                        <blockquote>
+                            for batch in testLoader:
+                            <blockquote>
+                                input, labels = batch<br>
+                                input = input.to(device)<br>
+                                labels = labels.to(device)<br>
+                                prediciton = cnn(input)<br>
+                                correct +=(prediciton.argmax(dim=1) == labels).sum().item()
+                            </blockquote>
+                        </blockquote>
+                        print("----------------------------------------------------")    <br>
+                        print(f"Accuracy on test set = {((correct / testSize) * 100):>0.1f}%")<br>
+                        print("----------------------------------------------------")
+                    </blockquote>             
+                </p>
+            </div>
+
+            <p>
+                Finally, giving the network the test data. According to the terms of our 
+                project, this is how it would be assessed. In reality, there isn't 
+                much point to both a testing <em>and</em> validation set, and most 
+                datasets just have a train/test split.
+            </p>
+
+            <br>
+
+            <h4>Now we can start defining things!</h4>
+
+            <div class="box">
+                <p>
+                    model = CNN().to(device)<br>
+                    epochTrainLoss = []<br>
+                    epochTrainAccuracy = []<br>
+                    <br>
+                    epochValLoss = []<br>
+                    epochValAccuracy = []<br>
+                    <br>
+                    epochCountList = []
+                </p>
+            </div>
+
+            <p>
+                These lists are just convenient ways of keeping track of the loss 
+                and accuracy of the model, as well as the number of epochs that have passed.
+            </p>
+
+            <div class="box">
+                epochCount = 100<br>
+                learningRate = 1e-4<br>
+                batchSize = 32<br>
+                lossFunction = nn.CrossEntropyLoss()<br>
+                optimizer = AdamW(lr=learningRate, params=model.parameters(), weight_decay=0.1)<br>
+                <br>
+                trainDataloader = DataLoader(trainingSet, batch_size=batchSize, shuffle=True)<br>
+                valDataloader = DataLoader(validationSet, batch_size=batchSize, shuffle=True)<br>
+                testDataloader = DataLoader(testingSet, batch_size=batchSize, shuffle=True)
+            </div>
+
+            <p>
+                We, at the moment, want our machine to train for 100 epochs, in batches of 
+                32 images at a time.
+                <br><br>
+                The learning rate represents how much the model changes in response to 
+                the calculated loss. This is another of those balancing acts - larger numbers can result 
+                in too-big changes which make the machine unstable, but smaller ones can mean the 
+                training process takes ages to actually get anywhere.
+                <br><br>
+                The loss function and optimiser are two bits of maths that I could spend an 
+                entire article explaining. I am not going to do that, but other people have! 
+                Read more about cross entropy loss <a href="https://machinelearningmastery.com/cross-entropy-for-machine-learning/">here</a>, 
+                and the Adam optimiser <a href="https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/">here</a>.
+            </p>
+
+            <br>
+
+            <h4>And finally we run it all</h4>
+
+            <div class="box">
+                <p>
+                    for i in range(epochCount):
+                    <blockquote>
+                        print(f"Epoch {len(epochCountList)+1}")<br>
+                        model.train()<br>
+                        epochCountTrain(trainDataloader, model, optimizer, lossFunction)<br>
+                        model.eval()<br>
+                        validation(valDataloader, model, lossFunction)<br>
+                        epochCountList.append(len(epochCountList) + 1)
+                    </blockquote>
+                </p>
+            </div>
+
+            <p>
+                This is the code that will take the longest to run. It takes all the functions we defined earlier, and gets them running. Your output will, 
+                after a while, start to look something like this:
+            </p>
+
+            <img class="ss" src="../../_assets/images/NN/train.jpg" alt="Epoch 69. Avg train loss: 0.542467. Train accuracy = 86.1%. Accuracy on validation set = 49.3%. Average validation loss = 2.236244224011898.">
+
+            <p>
+                (And when I say “a while”, I do mean A While. Our network took a couple of hours to train, even using a Google Colab GPU.)
+            </p>
+
+            <br>
+
+            <h4>Shapes and colours</h4>
+
+            <div class="box">
+                <p>
+                    plt.plot(epochCountList, epochTrainLoss, label="Training loss")<br>
+                    plt.plot(epochCountList, epochValLoss, label="Validation loss")<br>
+                    plt.title("Train & validation loss")<br>
+                    plt.legend()<br>
+                    plt.show()<br>
+                    <br>
+                    plt.plot(epochCountList, epochTrainAccuracy, label="Training accuracy")<br>
+                    plt.plot(epochCountList, epochValAccuracy, label="Validation accuracy")<br>
+                    plt.title("Train & validation accuracy")<br>
+                    plt.legend()<br>
+                    plt.show()
+                </p>
+            </div>
+
+            <p>
+                Remember the losses and accuracies from earlier? Now we put them on some graphs!
+            </p>
+
+            <img class="ss" src="../../_assets/images/NN/loss.jpg" alt="A graph showing loss against epochs, for both the training and validation set.">
+
+            <img class="ss" src="../../_assets/images/NN/accuracy.jpg" alt="A graph showing accuracy against epochs, for both training and validation sets">
+
+            <h4 onclick="showText('saveModel')">Save the model for later -></h4>
+            <div id="saveModel" style="display: none;">
+                <div class="box">
+                    <p>
+                        from google.colab import drive<br>
+                        drive.mount('/content/gdrive')<br>
+                        PATH ="/content/gdrive/MyDrive/fileNameGoesHere.pth"<br>
+                        torch.save(model.state_dict(), PATH)<br>
+                    </p>
+                </div>
+                <p>
+                    If you want to use this model for literally anything, you don’t want to have to sit through training it every single time. Luckily, Google Colab lets you save this stuff to your Drive.
+                </p>
+            </div>
+
+            <br>
+
+            <h3>But all this begs the question - how accurate <em>is</em> 
+            our model? Will the robo-gardeners identify us as Japanese knotweed and flamethrower us? 
+            Did we pass the project?</h3>
+
+            <div class="box">
+                <p>
+                 test(testDataloader, model)
+                 </p>
+            </div>
+            <br>
+
+            <img class="ss" src="../../_assets/images/NN/finalAns.jpg" alt="Accuracy on test set = 50.5%">
+
+            <p>
+                ...eh it's probably fine.
+            </p>
+
+            <br>
+
+
+
+            
+
+            <hr>
+            <div id="nextprev"></div>
+            <hr>
+            
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb">  
+              if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F"+"&opts=16798&num=10&ts=1676463200376");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
+            </script>
+            <!-- end www.htmlcommentbox.com -->
+          </main>
+          
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+  </body>
+</html>

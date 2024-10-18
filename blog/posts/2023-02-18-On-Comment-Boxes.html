@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="../../_js/changeTheme.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TechElement | Comments</title>
+    <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+          <main>
+            <h1>Comment Boxes</h1>
+            <h2>Or, time to Disqus the elephant in the room</h2>
+            <h4 id="postDate"></h4>
+            <hr>
+
+            <div class="box">
+              <b>March Update!</b>
+              <p>HTMLcommentbox now have a privacy policy available on their site. Read more about it <a href="../../blog/posts/2023-03-23-Leave-Yourself-A-Merry-Little-Comment.html">here</a>, but the long and short of it is that you can now leave a comment to your heat's content</p>
+            </div>
+
+            <p><br><br>Well what better way to start this blog off than by spending too much time reading the privacy policies of the very technologies I'm using (or, well, not using) to make it! Without further ado, let's talk about comment boxes, Disqus, and how everything costs money these days.</p>
+            <p>So picture the scene: you're me, setting up a website, and you want the ability to add comments. "Surely!" you say to yourself, "I will be able to find a solution that doesn't track me, or put on unwanted ads, or have a dodgy privacy policy!"
+            <br><br>
+            </p>
+
+            <h3>Enter Disqus</h3>
+
+            <p>Disqus is a commenting platform of fairly large size and fame. It was my initial idea for setting up comments here, not least because small-scale personal blogs are eligible for a free Pro subscription, giving them the ability to turn off ads in comment sections on their sites.
+              <br><br>
+              Surely things cannot go wrong from here.
+              <br><br>
+              The T&Cs and Privacy Policy are nothing unusual for a large company that deals with user accounts and data, which here is a phrase that means “pretty shady”.
+              <br><br>
+              Firstly, have you ever made the relatively reasonable assumption that the words you post online which can be obviously traced back to you will remain yours?
+            </p>
+
+            <img class="ss" src="../../_assets/images/Comment-Boxes/user-rights.jpg" alt="You retain your rights to any User Content (“User Content”). By submitting, posting or displaying any Content on the Service, you expressly grant, and you represent and warrant that you have all rights necessary to grant, Disqus a worldwide, royalty-free, non-exclusive, sublicensable, transferable, perpetual and irrevocable license to use, copy, reproduce, process, adapt, modify, publish, transmit, display, distribute, and make derivative works of  such User Content in any and all media, technology or distribution methods (now known or later developed). This license authorizes Disqus to make your User Content available, to the rest of the world and to let others do the same. You agree that this license also includes the right for Disqus to provide, promote, and improve the Services and to make User Content submitted to or through the Services available to other companies, organizations or individuals for the syndication, broadcast, distribution, promotion, publication, or otherwise of such User Content on other media and services. Such use by Disqus or other companies, organizations or individuals may be made with no compensation paid to you with respect to your content.">
+
+            <p>
+              Well, technically, yes. You do retain rights to your comments, meaning that if ever you’re unfortunate enough to come up against the Digital Millennium Copyright Act of 1998 (US intellectual property law), you have at least one thing on your side.
+              <br><br>
+              What Disqus can do, though, is basically anything else.
+              <br><br>
+              Copy your words, modify them, take them and post them somewhere else, do something with them that hasn’t even been invented yet - Disqus can do all that! Or, if you’d rather, they can pass it along to someone else, who has permission to do the exact same stuff.
+              <br><br>
+              They won't even pay you for it  :/
+              <br><br>
+              Onwards and solidly downwards!
+            </p>
+
+            <img class="ss" src="../../_assets/images/Comment-Boxes/data-collected.jpg" alt="b. We collect, use, store and transfer the following kinds of personal data about you: i. Identity Data includes first name, last name, username or similar identifier, date of birth, email address, telephone number, and mailing address. ii. Technical Data includes internet protocol (IP) address, unique Cookie ID, Device ID, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the devices you use to access the Service. iii. Profile Data includes your username and password, your interests, preferences, feedback and survey responses, marital status, gender, title. iv. Usage Data includes information about how you use the Service, and the content of comments that you post. v. Aggregated Data includes statistical or demographic data for any purpose.  vi. Sensitive Personal We do not intentionally collect any personal data about your race or ethnicity, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade union membership, information about your health or genetic or biometric data, or information about criminal convictions and offences. However, if you make comments using the Service that include such data about yourself it will be publicly available and may be processed by Disqus or others.">
+
+            <p>
+              They collect a frankly staggering amount of data on you. Anything you give when signing up, anything you give them as an optional extra, anything you use to access Disqus with, anything you put in a feedback form, and naturally, anything you type in one of their comment boxes.
+              <br><br>
+              I'm not a fan of the “we do not intentionally collect any personal [sensitive] data”, because that just means they won't outright ask you for it, not that they won't jump at the chance to analyse anything sensitive that you do say. 
+              <br><br>
+              Naturally, all of this data is used to advertise at you. 
+              <br><br>
+              Or, the data is sold on, and used by other companies to advertise at you.
+              <br><br>
+              And when I say “advertise at you”, I don't just mean adverts shown on Disqus itself.
+            </p>
+
+            <img class="ss" src="../../_assets/images/Comment-Boxes/data-usage.jpg" alt="We partner and share data with third parties that collect information across various channels, including offline and online, for purposes of delivering more relevant advertising to you or your business.  Our partners use this information to recognize you across different channels and platforms, over time, (including but not limited to, computers, mobile devices, addressable TV, or other media), for marketing, analytics, attribution, and reporting purposes. ">
+
+            <p>
+              I mean that we are in a crime drama, and anything you say can and will be used against you. By 21 different third parties, at my count.
+              <br><br>
+              This is not, by a long shot, all that's included in the Privacy Policy and Terms of Service. It was, however, enough for me to think a firm absolutely not, and start looking for some other method to allow comments.
+            </p>
+
+            <div class="box">
+              <p>
+                Oh, and they recently got fined €2.5 million for breaching data protection laws in Norway, because they just.. forgot Norway was protected by GDPR? Easy mistake to make, I'm sure.
+              </p>
+            </div>
+
+            <p>
+              And before we move on, I do want to stress that this isn’t overly unusual. Pretty much any large company that uses ads will make at least some of their profit from selling your data to then target those ads at you. Always remember to opt out of anything you can, and if you don’t have to put your real name in making an account - don't!
+          
+              <br><br><br>
+            </p>
+
+            <h3>Other options</h3>
+
+            <p><br>So we've established Disqus is not it. What else is there?</p>
+            <br>
+            <h4>Commento</h4>
+
+            <p>Open source, no ads, no cookies other than those necessary for site operation. Data is stored on Google Cloud, which doesn’t use said data for targeted advertising. They even promise to disclose security or privacy breaches on their site and on Twitter as soon as possible (this hasn’t happened as of the time of writing, which means congratulations are in order for not having a breach yet, or they really stretched the definition of “as soon as possible”)
+              <br><br>
+              So why am I not using Commento?
+              <br><br>
+              Money. 
+              <br><br>
+              It's a paid service. Which I can't fault, because on the Internet if you're not paying for a service then your data is being sold as the product. 
+              <br><br>
+              A paid service isn't what I need though. So, anything else?
+            </p>
+
+            <br>
+
+            <h4>Commentics</h4>
+
+            <p>
+              Another open source comment script, and this time it's even free. They use Google Analytics to analyse visits to their site, because nobody’s perfect, but that part is firmly opt-in.
+              <br><br>
+              However, it uses PHP. Not by itself a problem, except for the fact that Neocities doesn't allow .php files to be uploaded unless you pay to be a supporter (again, somewhat understandable, as they took the view that a paying subscriber would be less likely to just use their site as a file dumping ground)
+            </p>
+
+            <div class="box">
+              <p>
+                Once more, capitalism is the bane of my existence.
+              </p>
+            </div>
+
+            <br>
+
+            <h4>HTMLcommentbox</h4>
+
+            <p>
+              It's free, it's customisable, and there aren't any ads. 
+              <br><br>
+              There also isn't a privacy policy. <br>
+              (Or, at least, I keep getting a 503 error when I try to access it.)
+            </p>
+
+            <br>
+
+            <h4>Code my own</h4>
+
+            <p>I'm a uni student.  I don't have that kind of free time.</p>
+
+            <br><br>
+            <h3>So, now what?</h3>
+            <p>
+              Well, for now there's simply no comment feature. Try doing some OSINT and sending me a letter (that is a joke not a challenge). Release a homing pigeon. Throw a message in a bottle out to sea.
+              <br><br>
+              Maybe I'll even respond
+              <br>
+            </p>
+
+            <hr>
+            <div id="nextprev"></div>
+            <hr>
+
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb">  
+              if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F"+"&opts=16798&num=10&ts=1676463200376");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
+            </script>
+            <!-- end www.htmlcommentbox.com -->
+          </main> 
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+  </body>
+</html>

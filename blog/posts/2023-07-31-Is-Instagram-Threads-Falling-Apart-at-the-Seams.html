@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="../../_js/changeTheme.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Threads | TechElement</title>
+    <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+
+          <main>
+            <h1>Is Instagram Threads falling apart at the seams?</h1>
+            <h2>If you want to join threads so badly have you considered taking up knitting?</h2>
+            <h4 id="postDate"></h4>
+            <hr>
+
+            <p>
+                Now as you may have been able to guess from someone 
+                who is a fan of personal privacy, I do not like Meta. 
+                <a href="https://en.wikipedia.org/wiki/Facebook%E2%80%93Cambridge_Analytica_data_scandal">It's nearly always a red flag when a data scandal you 
+                were involved in has its own Wikipedia page.</a>
+                <br>
+                <br>
+                So I'll admit, I <em>was</em> skeptical when Meta 
+                announced it was launching their own rival to Twitter 
+                known as Threads. In the interest of open-mindedness, 
+                I decided to see how right (or wrong, on the off 
+                chance hell has frozen over) this skepticism was.
+            </p>
+
+            <br><br>
+
+            <h3>This isn't Meta's first copycat rodeo</h3>
+
+            <p>
+                See, Meta (well, this was still in the Facebook 
+                days) tried something called Threads before. It 
+                launched in 2019 and the aim was to let users send 
+                or receive messages, photos, videos, and stories. It 
+                was, in fact, a similar concept to the newest Threads, 
+                but instead of trying to challenge Twitter, they were 
+                hoping to compete with Snapchat. It got killed off 
+                in December 2021, to little sadness.
+            </p>
+
+            <br><br>
+
+            <h3>Threads... 2!</h3>
+
+            <p>
+                Threads 2.0 launched on the 6th July 2023. By the 
+                10th July, it had surpassed 100 million users. 
+                All that just made it even funnier when, upon 
+                finding it on the Google Play Store, I was met with:
+            </p>
+
+            <img class="ss" src="../../_assets/images/Threads/playStoreReview.jpg" alt="The Play Store page for Threads">
+
+            <p>
+                That is indeed 2.7 stars, based on 150 thousand 
+                reviews left by some of the 50 million+ downloads. 
+                The Apple App Store is slightly more positive, at 3.5 
+                starts, which comes from 2.2 thousand reviews. Most 
+                complaints from Android users revolve around the app 
+                crashing or bugging when you try to do, well, more or 
+                anything. Six of the ten reviews that Apple let me 
+                read give it 3 stars, citing lack of features as the 
+                main reason it could be improved (Threads only got a 
+                chronological feed as of the 26th July).
+                <br><br>
+                Where the fun <em>really</em> starts is the data 
+                safety section.
+                <br><br>
+                Apple lists:
+            </p>
+
+            <img class="ss" src="../../_assets/images/Threads/appStorePrivacy.jpg" alt="The following data may be collected and linked to your identity: Health&fitness, financial info, contact info, user content, browsing history, usage data, diagnostics, purchases, location, contacts, search history, identifiers, sensitive info, other data.">
+
+            <p>
+                <b>Don't like that.</b> 
+                <br><br>
+                We also see the return of our old friend Unspecified 
+                Other Data, which may be collected and linked to 
+                your identity! What other data? Well, I wish I knew.
+                <br><br>
+                Google has more detail. This much more, specifically:
+            </p>
+
+            <img class="ss" src="../../_assets/images/Threads/googlePlayPrivacy.jpg" alt="A long list of data shared and collected by Threads. The screenshot is zoomed out to fit it all on, such that it isn't fully legible">
+            <br>
+            <a href="https://play.google.com/store/apps/datasafety?id=com.instagram.barcelona&hl=en&gl=US">(You can read it properly here.)</a>
+
+            <p>
+                Behind those little dropdown arrows are more boxes such as:
+            </p>
+
+            <img class="ss" src="../../_assets/images/Threads/gPPMoredetail.jpg" alt="Under Personal Info, Threads collects Name, email, user ID, address, phone number, political or religious belief, sexual orientation, and other info. This is used for app functionality, analytics, developer communications, advertising or marketing, fraud prevention, security and compliance, personalisation, account management.">
+
+            <p>
+                <b><em>Don't like that at all.</em></b>
+                <br><br>
+                I'd really recommend you have a look through it 
+                yourself, to see what they use each piece of 
+                information for, as well as what is optional to share 
+                (eg, precise location), and what can't be turned off 
+                (eg, approximate location).
+                <br><br>
+                Threads also isn't available in the EU, which, as 
+                I mentioned <a href="https://techelement.neocities.org/blog/posts/2023-03-08-Privacy-Policy-Deep-Dive-With-Tumblr-Live">last time</a> 
+                I talked about a service not available in the EU, 
+                is somewhat of a red flag. Meta even confirmed it's 
+                been blocking attempts to access the app through a VPN.
+                <br><br>
+                <a href="https://www.theverge.com/2023/7/5/23784870/instagram-threads-adam-mosseri-interview-twitter-competitor">
+                    The CEO of Instagram said 
+                </a>
+                this was due to “complexities with complying with some of 
+                the laws coming into effect next year”, though decided not 
+                to mention which laws those might be. That being said, 
+                he's probably talking about the Digital Markets Act 
+                (DMA). This act will make it so that large online 
+                platforms (such a Meta) cannot prevent consumers 
+                linking up to businesses outside their platforms, 
+                track users outside of the core platform service for 
+                advertising purposes without consent of the user, or 
+                treat services offered by the platform itself more 
+                favourably in rankings vs similar services offered 
+                by third parties (
+                <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-markets-act-ensuring-fair-and-open-digital-markets_en">
+                amongst other things
+                </a>
+                ).
+                <br>
+                Not looking fantastic!
+            </p>
+
+            <br><br>
+
+            <h3>Anything fun in the T&Cs?</h3>
+
+            <p>
+                Well, you need an Instagram account to make a 
+                Threads one, this is a fact presented to you when 
+                you try to sign up. What they <em>don't</em> mention 
+                as clearly is the fact that you can't delete your 
+                Threads account without also deleting your 
+                Instagram one - the best you can do is simply 
+                deactivate it, hiding it + any content from users but 
+                still leaving the data on their servers.
+            </p>
+
+
+
+            <div class="box">
+              <p>
+                Also the Meta headquarters is at 1 Meta Way, 
+                California, USA, which is entirely irrelevant 
+                to this article but annoys me in a way I cannot 
+                quite put into words.</p>
+            </div>
+
+            <br><br>
+
+            <h3>Conclusion?</h3>
+
+            <p>
+              It's funny that right at the start of writing this I said 
+              the words "open-minded" alongside "Meta". If you came here 
+              for unbiased <em>anything</em> then you took more than a few 
+              wrong turns on the way. 
+              <br><br>
+              I am honest-to-god <em>baffled</em> as to how Threads got 
+              this big this fast. I thought we had all agreed Twitter 
+              was an online cesspool why did so many people jump ship 
+              to the Twitter knockoff made by <em>Facebook</em> of all people. 
+              Genuinely please if you have Threads explain me your thought process I 
+              truly want to know.
+            </p>
+
+            <hr>
+            <div id="nextprev"></div>
+            <hr>
+            
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb">  
+              if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F"+"&opts=16798&num=10&ts=1676463200376");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
+            </script>
+            <!-- end www.htmlcommentbox.com -->
+          </main>
+          
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+  </body>
+</html>

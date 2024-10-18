@@ -1,0 +1,248 @@
+:root {
+    /* --body-bg-image: url("/_assets/dragon.png"); */
+
+    /* colors (vestigial) */
+    --content: #43256E;
+}
+
+@font-face {
+    font-family: Atkinson-Hyperlegible;
+    src: url("../_fonts/Atkinson-Hyperlegible-Regular-102.ttf");
+}
+
+@font-face {
+    font-family: Atkinson-Hyperlegible;
+    src: url("../_fonts/Atkinson-Hyperlegible-Bold-102.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Atkinson-Hyperlegible;
+    src: url("../_fonts/Atkinson-Hyperlegible-Italic-102.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Atkinson-Hyperlegible;
+    src: url("../_fonts/Atkinson-Hyperlegible-BoldItalic-102.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Atkinson-Hyperlegible', sans-serif;
+    margin: 0;
+    background-color: #f5a24d;
+    /* background-size: 65px;  */
+    color: black;
+    /* background-image: var(--body-bg-image); */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* the "container" is what wraps the entire website */
+
+#container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#container a {
+    color: #da6d00;
+    font-weight: bold;
+}
+
+#header {
+    width: 100%;
+    background-color: #fdd27d;
+    border-color: #da6d00;
+    height: 150px;
+
+    /*I don't have a header image atm but the code is here*/
+    background-image: var(--header-image);
+    background-size: 100%;
+}
+
+#navbar {
+    height: 40px;
+    background-color: #fdd27d ;
+    border: 3px solid #da6d00;
+    width: 100%;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar-dark ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+#navbar-dark li {
+    padding-top: 10px;
+}
+
+#navbar li a {
+    color: #da6d00;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+#navbar-dark li a {
+    color: #da6d00;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+#navbar li a:hover {
+    color: grey;
+    text-decoration: underline;
+}
+
+#flex {
+    display: flex;
+}
+
+#blinkie-hover p:hover{
+    color:grey;
+    text-decoration: underline;
+}
+
+#blinkies {
+    display: none;
+}
+
+aside {
+    background-color: #fdd27d;
+    border: 3px solid #da6d00;
+    width: 200px;
+    padding: 20px;
+    font-size: smaller;
+}
+
+
+/* this is the color of the main content area,
+between the sidebars! */
+main {
+    background-color: #fdd27d;
+    border: 3px solid #da6d00;
+    flex: 1;
+    padding: 20px;
+    order: 2;
+}
+
+
+
+*/ #leftSidebar {
+    order: 1;
+}
+
+/* again, no rightSidebar, but the code is present */
+/* #rightSidebar {
+    order: 3;
+} */
+
+footer {
+    background-color: #fdd27d;
+    border: 3px solid #da6d00;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    color: #da6d00;
+}
+
+h2,
+h3 {
+    color: #da6d00;
+}
+
+
+
+.box {
+    background-color: bisque;
+    border: 1px solid #6d3600;
+    padding: 10px;
+}
+
+.ss {
+    width: 80%;
+    height: auto;
+}
+
+.blink-rect {
+    width: 150px;
+    height: 20px;
+}
+
+.blink-sqr {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+select {
+    background-color: bisque;
+    border: 1px solid #6d3600;
+}
+
+
+/* #topBar {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    font-size: smaller;
+    background-color: #ffd480;
+} */
+
+
+/* BELOW THIS POINT IS MEDIA QUERY */
+
+@media only screen and (max-width: 800px) {
+    #flex {
+        flex-wrap: wrap;
+    }
+
+    aside {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    /* the order of the items is adjusted here for responsiveness!
+since the sidebars would be too small on a mobile device.
+feel free to play around with the order!
+*/
+    main {
+        order: 1;
+    }
+
+    #leftSidebar {
+        order: 2;
+    }
+
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,230 @@
+:root {
+    /* --body-bg-image: url("/_assets/dragon.png"); */
+
+    /* colors */
+    --content: #43256E;
+}
+
+@font-face {
+    font-family: Atkinson-Hyperlegible;
+    src: url("../_fonts/Atkinson-Hyperlegible-Regular-102.ttf");
+}
+
+@font-face {
+    font-family: Atkinson-Hyperlegible;
+    src: url("../_fonts/Atkinson-Hyperlegible-Bold-102.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Atkinson-Hyperlegible;
+    src: url("../_fonts/Atkinson-Hyperlegible-Italic-102.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Atkinson-Hyperlegible;
+    src: url("../_fonts/Atkinson-Hyperlegible-BoldItalic-102.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Atkinson-Hyperlegible', sans-serif;
+    margin: 0;
+    background-color: #2a5ea2;
+    /* background-size: 65px;  */
+    color: whitesmoke;
+    /* background-image: var(--body-bg-image); */
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* the "container" is what wraps the entire website */
+
+#container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#container a {
+    color: #6b9de0;
+    font-weight: bold;
+}
+
+#header {
+    width: 100%;
+    background-color: #003177;
+    border-color: #6b9de0;
+    height: 150px;
+
+    /*I don't have a header image atm but the code is here*/
+    background-image: var(--header-image);
+    background-size: 100%;
+}
+
+#navbar {
+    height: 40px;
+    background-color: #003177 ;
+    border: 3px solid #6b9de0;
+    width: 100%;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+#navbar li a {
+    color: #6b9de0;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+#navbar li a:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+#blinkie-hover p:hover{
+    color:#f9e7e7;
+    text-decoration: underline;
+}
+
+#blinkies {
+    display: none;
+}
+
+#flex {
+    display: flex;
+}
+
+aside {
+    background-color: #003177;
+    border: 3px solid #6b9de0;
+    width: 200px;
+    padding: 20px;
+    font-size: smaller;
+}
+
+
+/* this is the color of the main content area,
+between the sidebars! */
+main {
+    background-color: #003177;
+    border: 3px solid #6b9de0;
+    flex: 1;
+    padding: 20px;
+    order: 2;
+}
+
+
+
+*/ #leftSidebar {
+    order: 1;
+}
+
+/* again, no rightSidebar, but the code is present */
+#rightSidebar {
+    order: 3;
+}
+
+footer {
+    background-color: #003177;
+    border: 3px solid #6b9de0;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    color: #6b9de0;
+}
+
+h2,
+h3 {
+    color: #6b9de0;
+}
+
+
+
+.box {
+    background-color: #a8bfdc;
+    border: 1px solid #6b9de0;
+    padding: 10px;
+    color: black;
+}
+
+.ss {
+    width: 80%;
+    height: auto;
+}
+
+.blink-rect {
+    width: 150px;
+    height: 20px;
+}
+
+.blink-sqr {
+    width: 50px;
+    height: 50px;
+}
+
+select {
+    background-color: #a8bfdc;
+    border: 1px solid #6b9de0;
+}
+
+
+#topBar {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    font-size: smaller;
+    background-color: #003177;
+}
+
+
+/* BELOW THIS POINT IS MEDIA QUERY */
+
+@media only screen and (max-width: 800px) {
+    #flex {
+        flex-wrap: wrap;
+    }
+
+    aside {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    /* the order of the items is adjusted here for responsiveness!
+since the sidebars would be too small on a mobile device.
+feel free to play around with the order!
+*/
+    main {
+        order: 1;
+    }
+
+    #leftSidebar {
+        order: 2;
+    }
+
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+}

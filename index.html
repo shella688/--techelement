@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- <script src="_js/changeTheme.js"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TechElement</title>
+    <link rel="icon" type="imagr/x-icon" href="_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="_css/tech.css" type="text/css" media="all">
+    <link id="theme2" rel="stylesheet" title="magic" href="_css/magic.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+
+    <script src="_js/changeTheme.js"></script>
+
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="index.html">Home</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                
+
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+          <aside id="leftSidebar" style="margin-right: 10px;">
+            <h3>Find Me Elsewhere</h3>
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Twitter</a></li>
+              <li><a href="https://www.youtube.com/watch?v=M5V_IXMewl4">Mastodon</a></li>
+              <li><a href="https://www.youtube.com/watch?v=uE-1RPDqJAY">LinkedIn</a></li>
+            </ul>
+            <br>
+            <hr>
+            <br>
+
+            Looking for something else? Have you checked the-back?
+              
+            <br>
+            <br>
+            <hr>
+            <br>
+
+            <h3>Some credits and thanks:</h3>
+            <p>This site relied heavily on google, Stack Overflow, and the tried and tested method of dicking around with the code until it worked. More specifically, I want to give shout outs to:</p>
+              <ul>
+                <li><a href="sadgrl.online">sadgrl.online</a>, specifically their <a href="https://sadgrl.online/projects/layout-builder/">layout builder</a>, which formed the base of this site</li>
+                <li><a href="https://zonelets.net/">Zonelets</a>, used to make the blog section</li>
+                <li>The font used is <a href="https://brailleinstitute.org/freefont">Atkinson Hyperlegible</a></li>
+              </ul>
+          </aside>
+
+          <main>
+              <h1 id="skylanders-element">Skylanders of the Tech element are stronger in this zone</h1>
+
+              
+              <br>
+              <div class="box">
+                <p id="poem">Ladles and jellyspoons, skinny and stout<br>I'll tell you a tale I know nothing about<br>Admission is free, so pay at the door<br>Pull up a seat, and sit on the floor</p>
+                <p id="poemAuthor" style="text-align:right;">Unknown</p>
+              </div>
+              <br>
+  
+              <h2>whoami</h2>
+              <p>Hi hello first name's Tech, surname's Element, they/them, and I'm a computer science student. My primary interests are data protection and privacy, reading T&Cs, and fighting for my life on legislation dot gov dot uk.</p>
+              <p>This site is still very much a work in progress! Feel free to have a poke around and let me know if something breaks</p>
+          
+              <h2>whatami</h2>
+              <script src="_js/toggleBlinkie.js"></script>
+              <p id="blinkie-hover" onclick="toggleBlinkie()">Click here to see the funny flashing gifs</p>
+              <div id="blinkies" display="none">
+                <!-- Blinkie credits go to various people, including kelprot, bl1nkiep0sting -->
+                <img class="blink-rect" src="_assets/images/graphicDesign.jpg">
+                <img class="blink-rect" src="_assets/blinkies/autismEyes.webp">
+                <img class="blink-rect" src="_assets/blinkies/cantSpell.gif">
+                <img class="blink-rect" src="_assets/blinkies/backPain.gif">
+                <img class="blink-rect" src="_assets/blinkies/clubPenguin.webp">
+                <img class="blink-rect" src="_assets/blinkies/ohWorm.webp">
+                <br>
+                <img class="blink-sqr" src="_assets/blinkies/anthillInside.gif">
+                <img class="blink-sqr" src="_assets/blinkies/altadorcup_staff.gif">
+                <img class="blink-sqr" src="_assets/blinkies/groovychomby.gif">
+                <img class="blink-sqr" src="_assets/blinkies/piratepoogle.gif">
+                <img class="blink-sqr" src="_assets/blinkies/danceDanceWereFallingApartToHalfTime.gif">
+                
+              </div>
+
+
+             
+          
+            </main>
+
+            
+          
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  </body>
+</html>

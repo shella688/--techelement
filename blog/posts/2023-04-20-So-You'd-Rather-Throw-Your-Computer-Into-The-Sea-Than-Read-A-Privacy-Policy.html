@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="../../_js/changeTheme.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TechElement</title>
+    <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+
+          <main>
+            <h1>So You'd Rather Throw Your Computer Into The Sea Than Read Through A Privacy Policy</h1>
+            <h2>It is a truth universally acknowledged that a company in possession of dubious morals and your data must be in want of a profit.</h2>
+            <h4 id="postDate"></h4>
+            <hr>
+
+            <p>
+              If you've fallen prey to the siren call of clicking the little I Have 
+              Read The Terms And Conditions checkbox without ever actually reading 
+              the thing, you're not alone. Everyone does it. Hell, I've done it. Those 
+              things are long, with small text and terrible wording - all of which 
+              is often done deliberately. Nevertheless it's important to know what 
+              a given service is doing with the data you provide it, and so this 
+              guide aims to give a rundown of ways to make reading a privacy policy a 
+              little more bearable.
+            </p>
+
+            <br>
+
+            <h3>Get Someone Else To Read It For You</h3>
+
+            <p>
+              I'm not the only person talking about data privacy online! One solid 
+              place to start is to search “[service] data privacy” and see what's 
+              been in the news. A couple of other good places to look are:
+            </p>
+            <br>
+
+            <h4><a href="https://tosdr.org/">ToS;DR</a></h4>
+            <p>
+              Stands for Terms of Serice; Didn't Read. 
+              An <em>incredibly</em> comprehensive resource that also allows contributions 
+              from the anyone with an account. Each service on the site is given a grade from A to E (or N/A), 
+              as well as summarising the key points from the given Terms and Privacy policies.
+            </p>
+
+            <br>
+
+            <h4><a href="https://privacy.commonsense.org/evaluations/1">Common Sense Privacy Program</a></h4>
+            <p>
+              The Common Sense Privacy Program is a US-based non-profit organisation 
+              that reviews various apps, scoring each out of 100%. It's not 
+              perfect - there are instances where “This evaluation did not assess 
+              whether this product collects geolocation data” or similar - but it 
+              provides a simple to read overview of what a given privacy policy 
+              says. 
+              <br><br>
+              It's also aimed at educators and parents, so there are sections 
+              regarding whether the service is intended for schools or under-13s 
+              which can affect the overall score whilst realistically speaking not 
+              affecting you, the person reading this (unless you happen to be a 
+              teacher, in which case hi, or under 13, in which case please don't spend 
+              all your time on the internet there are better things to do promise).
+            </p>
+
+            <br>
+
+            <h4><a href="https://foundation.mozilla.org/en/privacynotincluded/">*Privacy Not Included</a></h4>
+            <p>
+              Mozilla is another non-profit, and also the group who made the 
+              Firefox browser (which you should switch to if you use Google Chrome 
+              or Microsoft Edge but that's another topic for another day).
+              <br><br>
+              It has reviews for a whole range of services, from Amazon Ring 
+              cameras to Zoom to Pray.com, and splits their review into three 
+              main sections: privacy (does it have camera access, what data does 
+              it collect, is the policy user-friendly etc); security (is it 
+              encrypted, does it encourage the use of a strong password); and AI 
+              (if it's there, what decision does it made and how transparent about 
+              its use is the service).
+              <br><br>
+              As a fun added bonus, it also provides the company's track record 
+              (if known) of data protection.
+            </p>
+
+            <br><br>
+
+            <h3>Read The Damn Thing</h3>
+
+            <p>
+              Yeah, unfortunately the best way you've got of knowing what a 
+              company is doing with your data is to read the document in which 
+              they tell you what they're doing with your data.
+            </p>
+
+            <br>
+
+            <h4>Can you find it?</h4>
+            <p>
+              If a privacy policy isn't easy to find, if you've looked in all 
+              the likely site locations and can't see it, if you find an error 
+              when you should find a pdf… those are red flags!
+            </p>
+
+            <br>
+
+            <h4>How long is it?</h4>
+            <p>
+              There's no easy "your privacy policy should be exactly within this 
+              specified range of pages", but documents that are both incredibly 
+              short or incredibly long should be treated with suspicion.
+              <br><br>
+              Something that's one page long and contains lots of phrases to the 
+              effect of "...and your data may be used for other purposes" is 
+              something that very deliberately isn't telling you important 
+              information about what, exactly, they're doing to your data.
+              <br><br>
+              On the other end of the scale, a document that's fifteen pages long 
+              in size 9 font is almost certainly using the fact that nobody wants 
+              to go through all that to hide that they went down the Yellow Pages 
+              and sold your data to anyone who picked up the phone.
+            </p>
+
+            <br>
+
+            <h4>Do You Know Your Rights?</h4>
+            <p>
+              If you're a resident in the UK or EU, you have the right to access 
+              data held about you, the right to have this forgotten, and the right 
+              to not have your data used for marketing purposes (this is a 
+              non-exhaustive list - you have other rights too).
+              <br><br>
+              A service processing data about you, then, should have provisions in 
+              their privacy policy talking about this, and if it doesn't, that's a 
+              red flag! Sometimes this is built into the policy as a whole, 
+              benefiting everybody! Sometimes there is a separate clause (or even 
+              an entirely differently policy) for people in these areas, in which 
+              case, fuck the rest of you I guess?
+            </p>
+
+            <img class="ss" src="../../_assets/images/PP-Guide/california.jpg" alt="California resident - Do not sell These transfers to third parties may constitute “sale” of your personal information under California law. A California resident can halt these sales at any time by pressing the “California resident - Do not sell” link that is located in the footer of every page on our site. Third-parties do not sell personal information that has been sold to them by the Guardian unless you have first received explicit notice and are provided an opportunity to exercise the right to opt out. You can read further about your California rights here.">
+            <br>
+            <img class="ss" src="../../_assets/images/PP-Guide/EU.jpg" alt="If you are located in the UK or the EEA, you may contact us for a copy of the safeguards which we have put in place for the transfer of your personal data outside the UK or the EEA.">
+            <br>
+            <img class="ss" src="../../_assets/images/PP-Guide/australia.jpg" alt="Your rights under the Australian Privacy Act">
+
+            <br><br>
+
+            <div class="box">
+              <p>
+                Other places may also have specific data protection regulations 
+                that a service operating in that area should take into account. 
+                For example,  both Australia the state of California in the USA 
+                definitely do, and you should check if where you live does too.
+              </p>
+            </div>
+
+            <br>
+
+            <h4>Ctrl+F</h4>
+            <p>
+              Everyone loves a good Find In Page. An incomplete list of phrases to 
+              watch out for are:
+              <ul>
+
+                <li>
+                  "Sell"
+                </li>
+                <ul>
+                  <li>
+                    And if that has no results, a company might still share your data with 
+                    “partner”s, “affiliate”s, or “third parties”
+                  </li>
+                </ul>
+
+                <li>
+                  “Advertising”
+                </li>
+                <ul>
+                  <li>
+                    Is it targeted? Can you turn it off? What, data do they use to advertise 
+                    to you, and who else is it passed to?
+                  </li>
+                </ul>
+
+                <li>
+                  "May"
+                </li>
+                <ul>
+                  <li>
+                    And other such vague words. A company that may share info or may 
+                    combine it with information collected from other sources is likely 
+                    not revealing the full extent of what they do.
+                  </li>
+                </ul>
+
+              </ul>
+            </p>
+
+            <br><br>
+
+            <h3>Wake Up</h3>
+
+            <p>
+              Realise this was all a terrible dream. The Internet doesn't exist. 
+              The concept of a "business" is alien to you. Solid land is a 
+              faraway dream. You are <em>Climatius reticulatus</em>, a small type of spiny 
+              shark who lived about 415 million years ago and life is good.
+            </p>
+
+            <br><br>
+
+
+
+
+            <hr>
+            <div id="nextprev"></div>
+            <hr>
+            
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb">  
+              if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F"+"&opts=16798&num=10&ts=1676463200376");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
+            </script>
+            <!-- end www.htmlcommentbox.com -->
+          </main>
+          
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+  </body>
+</html>
