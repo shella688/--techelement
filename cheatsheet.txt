@@ -3,3 +3,4 @@ bundle exec jekyll serve
 
 neocities push .
 - to upload site to neocities
+- move .git file before doing this then put back in after
