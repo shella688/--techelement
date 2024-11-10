@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="../../_js/changeTheme.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TechElement</title>
+    <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+
+
+          <main>
+            <h1>That time they let me talk at a respected cybersecurity conference</h1>
+            <h2>An abridged summary of An Abridged History of Malware</h2>
+            <h4 id="postDate"></h4>
+            <hr>
+
+            <p>We're coming up on a year since I spoke at BSides London! 
+              That's right, they let me into one of the largest 
+              community-organised cybersecurity events in the UK and didn't stop 
+              me when I spoke as fast as I could to fit in about seven decades 
+              of malware history into my fifteen minute presentation. I don't 
+              know if it comes through on the video recording, but they even 
+              laughed at my jokes, which was a very gratifying experience.
+
+              <br><br>
+
+              BSides as a whole, actually, was just a fantastic time. If you 
+              ever fancy listening to a bunch of people talk who really know 
+              their stuff, or just hanging out with some really cool people in 
+              general, see if there's a BSides near you. There probably is!
+              </p>
+
+              <br>
+              <hr>
+              <br>
+
+              <p>
+                The recording of my talk, An Abridged History of Malware, can be found 
+                on YouTube <a href="https://youtu.be/tGewVrw1LaY?si=SfsUcrkYuZGRTNHe">here</a>.
+                
+                <br><br>
+
+                The slides I used can be downloaded from <a href="https://www.dropbox.com/scl/fi/cqs23d7az0gkruv6dp9nw/An-Abridged-History-of-Malware.odp?rlkey=0l33mv3qk1cao7yq9ztvtgp6v&st=rynzmw4f&dl=0">here</a>. 
+                For any typeface nerds in the audience, yes, the titles for each slide 
+                were all written in a typeface from the relevant decade. 
+                <a href="http://www.identifont.com/year?0">IdentiFont</a> is a wonderful resource.
+
+              </p>
+
+
+            <div class="box">
+              <p>bloop</p>
+            </div>
+
+            <hr>
+            <div id="nextprev"></div>
+            <hr>
+            
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb">  
+              if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F"+"&opts=16798&num=10&ts=1676463200376");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
+            </script>
+            <!-- end www.htmlcommentbox.com -->
+          </main>
+          
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+  </body>
+</html>
