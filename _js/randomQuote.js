@@ -42,8 +42,8 @@ function randomQuote() {
        "Disco Elysium"],
       ["We walk on, with a rough and tarnished hope, and a tangled, ruined love. We hope that against all odds, we will find more than just another lonely ending in the darkness. We hope that those who come after us will make it further than we could.",
        "The Silt Verses <br>Chapter 45: Of Love, and Gods' Defeat (part two)"],
-      ["Other people are all there is.",
-       "Wooden Overcoats"],
+      ["Didn't anybody ever tell you? Other people are all there is!",
+       "Wooden Overcoats <br>s4 e10: A Funn Farewell"],
       ["Do the stars feel heavier now?",
        "Writing Prompt <br>by Michael Torres"],
       ["And remember, 'Patience, Patience' is the watchword of a sage<br>Not to-day nor yet to-morrow can complete a perfect age.",
@@ -59,7 +59,15 @@ function randomQuote() {
       ["There are worlds out there where the sky is burning, and the sea's asleep, and the rivers dream; people made of smoke and cities made of song. Somewhere there's danger, somewhere there's injustice, and somewhere else the tea's getting cold. <br>Come on, Ace. We've got work to do!",
        "Doctor Who <br>season 26, Survival"],
       ["I may talk like a fool, but I always know what I'm talking like a fool about.",
-       "Doctor Who: Caedroia <br>by Lloyd Rose"]
+       "Doctor Who: Caedroia <br>by Lloyd Rose"],
+      ["Outside, in the passageway, was the unsafe fascination of love, the liquid reality of a future where people did stupid things because the rules changed all the time and you had to feel your way through life.",
+       "Doctor Who: The Turing Test <br>by Paul Leonard"],
+      ["Come to me, said the world.<br>This is not to say<br>it spoke in exact sentences<br>but that I perceived beauty in this manner.",
+       "October <br>by Louise Glück"],
+      ["All this happened, more or less.",
+       "Slaughterhouse-Five <br>by Kurt Vonnegut"],
+      ["We all just want to be people, and none of us know what that really means.",
+       "Borne <br>by Jeff VanderMeer"]
     ];
 
     let i = Math.floor(Math.random() * quoteArray.length);
