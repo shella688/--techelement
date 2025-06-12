@@ -35,7 +35,7 @@ let postsArray = [
 //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ]
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
 //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
-["posts/2025-06-12-Deterring-activity-on-hacking-forums:-Can-we?.html"],
+["posts/2025-06-12-Deterring-activity-on-hacking-forums:-Can-we.html"],
 ["posts/2024-11-10-The-time-they-let-me-talk-at-a-respected-cybersecurity-conference.html"],
 ["posts/2023-08-08-Escaping-the-Reverse-Bear-CAPTCHA.html"],
 ["posts/2023-07-31-Is-Instagram-Threads-Falling-Apart-at-the-Seams.html"],
@@ -44,7 +44,7 @@ let postsArray = [
 ["posts/2023-04-01-I-sat-down-and-counted-the-GDPR-violations-in-fiction-podcast-Red-Valley.html"],
 ["posts/2023-03-23-Leave-Yourself-A-Merry-Little-Comment.html"],
 ["posts/2023-03-08-Tumblr-Live-Or-Tumblr-Dead.html"],
-[ "posts/2023-02-18-On-Comment-Boxes.html"]
+["posts/2023-02-18-On-Comment-Boxes.html"]
 //[ "posts/1969-12-31-Post-Template.html" ] 
 ];
 
