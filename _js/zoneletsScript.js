@@ -35,7 +35,7 @@ let postsArray = [
 //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ]
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
 //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
-["posts/blog/posts/2025-06-12-Deterring-activity-on-hacking-forums:-Can-we?.html"],
+["posts/2025-06-12-Deterring-activity-on-hacking-forums:-Can-we?.html"],
 ["posts/2024-11-10-The-time-they-let-me-talk-at-a-respected-cybersecurity-conference.html"],
 ["posts/2023-08-08-Escaping-the-Reverse-Bear-CAPTCHA.html"],
 ["posts/2023-07-31-Is-Instagram-Threads-Falling-Apart-at-the-Seams.html"],
