@@ -84,7 +84,7 @@
                 I cannot emphasise enough that, for a training set of this size, 
                 you should use a pretrained model. These models have been trained 
                 on datasets containing <em>millions</em> of images and will do a 
-                far better job of identifying flowers than the one you trained from scratch on about 1000. What’s more, your model is going to be prone to what we call overfitting, when a neural network is really good at dealing exactly with the data it got trained on, but a little bit shit at coping with anything else.
+                far better job of identifying flowers than the one you trained from scratch on about 1000. What's more, your model is going to be prone to what we call overfitting, when a neural network is really good at dealing exactly with the data it got trained on, but a little bit shit at coping with anything else.
                 <br><br>
                 In these conditions, making a model with an accuracy greater than even 55% is going to be an unreasonably difficult task.
             </p>
@@ -219,7 +219,7 @@
                 <br><br>
                 The important part is the two trainingSets, which is made up of a few thousand flower images as well as a label saying what flower each is of. The two are, initially, identical, being resized into squares, normalised, and rotated randomly between 0 and 90 degrees. However, we next take trainingSet2, split it in half, and randomly adjust the brightness of the images in one half whilst doing the same to the saturation of those in the other half. Then, all of the trainingSets are combined into one big one.
                 <br><br>
-                We do this to add some variety to the training data. Remember when I mentioned that our handmade network won’t be trained on enough data to have a good accuracy? This process is to increase the data available, as well as making some of that data different enough that it almost makes up for the fact we don’t have millions of images at our disposal.
+                We do this to add some variety to the training data. Remember when I mentioned that our handmade network won't be trained on enough data to have a good accuracy? This process is to increase the data available, as well as making some of that data different enough that it almost makes up for the fact we don't have millions of images at our disposal.
                 <br><br>
                 The below code displays 4 random training images, just to look at 'em.
             </p>
@@ -256,7 +256,7 @@
                     or at least one hooked up to a graphics processing unit. Well, 
                     okay, you don't <em>need</em> a GPU. You could sit around for 
                     five days waiting for your CPU to do all the calculations. 
-                    You could even try running it on your mobile phone's processor, if you’re stuck in the wilderness and need a fire.
+                    You could even try running it on your mobile phone's processor, if you're stuck in the wilderness and need a fire.
                     <br><br>
                     I used Google Colab which, for free, lets you use a T4 GPU, and 
                     if you don't have a GPU of your own would <em>heavily</em> 
@@ -282,7 +282,7 @@
             <p>
                 And with all that out the way, we can start building our actual network!
                 <br><br>
-                I say <em>our</em>, I more accurately mean our implementation of the model also known as VGG11, because quite frankly if it’s not broken don’t fix it. Also our own attempts got a grand total of 7% accuracy. Nobody liked that.
+                I say <em>our</em>, I more accurately mean our implementation of the model also known as VGG11, because quite frankly if it's not broken don't fix it. Also our own attempts got a grand total of 7% accuracy. Nobody liked that.
             </p>
 
             <br>
@@ -392,7 +392,7 @@
                 <br><br>
                 After we work through a couple of those, we use a flatten layer to ensure the input is in the form of a one-dimensional array (this will be needed for later).
                 <br><br>
-                We finish with linear layers (which are also called fully connected layers). These compile all the information gathered from the previous layer, and then classify the input image. The difference between Linear and LazyLinear is that LazyLinear doesn’t need the input number of features specified and will just figure that out itself (it’s lazy like that!). The exact values for each parameter are, again, able to be changed, so long as the output is 102 - the same as the number of flower classes.
+                We finish with linear layers (which are also called fully connected layers). These compile all the information gathered from the previous layer, and then classify the input image. The difference between Linear and LazyLinear is that LazyLinear doesn't need the input number of features specified and will just figure that out itself (it's lazy like that!). The exact values for each parameter are, again, able to be changed, so long as the output is 102 - the same as the number of flower classes.
                 <br><br>
                 Between some of the linear layers are dropout layers. These randomly drop some of the neurons and prevent them from having any impact on the overall output, in order to stop overfitting.
                 <br><br>
@@ -640,7 +640,7 @@
                     </p>
                 </div>
                 <p>
-                    If you want to use this model for literally anything, you don’t want to have to sit through training it every single time. Luckily, Google Colab lets you save this stuff to your Drive.
+                    If you want to use this model for literally anything, you don't want to have to sit through training it every single time. Luckily, Google Colab lets you save this stuff to your Drive.
                 </p>
             </div>
 

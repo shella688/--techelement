@@ -118,6 +118,11 @@ aside {
     font-size: smaller;
 }
 
+hr {
+    background-color: #43256E;
+    border-color: #43256E;
+}
+
 
 /* this is the color of the main content area,
 between the sidebars! */

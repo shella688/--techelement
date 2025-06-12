@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="../../_js/changeTheme.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TechElement</title>
+    <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+    <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+  </head>
+
+
+
+
+  <body onload="getPreviousTheme()">
+    <div id="container">
+      <div id="headerArea">
+        <nav id="navbar" style="margin-bottom: 10px;">
+         <ul>
+           <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/archive.html">Archive</a></li>
+
+            <li>
+              <form id="themeDropdown" name="themeDropdown">
+                <label for="theme"><a>Theme:</a></label>
+                <select name="themeSelected" id="theme" onchange="changeTheme()">
+                  <option>-- Select --</option>
+                  <option onclick="changeTheme()">Tech</option>
+                  <option onclick="changeTheme()">Magic</option>
+                  <option onclick="changeTheme()">Life</option>
+                  <option onclick="changeTheme()">Undead</option>
+                  <option onclick="changeTheme()">Fire</option>
+                  <option onclick="changeTheme()">Water</option>
+                  <option onclick="changeTheme()">Air</option>
+                  <option onclick="changeTheme()">Earth</option>
+                  <option onclick="changeTheme()">Light</option>
+                  <option onclick="changeTheme()">Dark</option>
+                </select>
+              </form>
+            </li>
+
+         </ul>
+        </nav>
+     </div>
+
+      <div id="flex">
+
+          <!-- <aside id="leftSidebar" style="margin-right: 10px;">
+            <p>
+              Left sidebar stuff
+            </p>
+          </aside> -->
+
+          <main>
+            <h1>Deterring activity on hacking forums: Can we?</h1>
+            <h2>What if we all just promised not to do cybercrime?</h2>
+            <h4 id="postDate"></h4>
+            <hr>
+
+            <p>
+              I have recently written a dissertation - entitled 
+              “Deterring activity on hacking-focused cybercriminal forums” - 
+              for my final year of university, and not only that but I've 
+              even more recently gotten a first for said dissertation. 
+              If this doesn't qualify me to talk about this topic then it at
+               least gives me the ego boost to do so anyway.
+               
+              <br><br>
+
+              More or less, this article (and a future one - stay tuned!) 
+              will be that dissertation, but publishing it here frees me 
+              from the shackles of the tone required for a piece of academic 
+              writing. We'll start with a bit of context to explain what, 
+              exactly, I mean by hacking forums. Then we'll look at ways 
+              law enforcement aims to deter activity on these sites, as well 
+              as evaluating how successful (or unsuccessful) they are at 
+              achieving this. The fabled future article will go into the 
+              practical part of the dissertation: the research I carried out 
+              myself through a survey and my own recreation of a hacking 
+              forum, plus the results I got.
+            </p>
+
+            <div class="box">
+              <p>Spoiler alert: turns out university computer science 
+                  students do not sign up in droves for in-person interviews. But I 
+                  digress.</p>
+            </div>
+
+            <br><br>
+
+            <h3>What is hacking?</h3>
+
+            <p>
+              Hacking is one of those words that doesn't really mean anything. 
+              It's broadly synonymous with cybercrime, until someone starts 
+              asking annoying questions like “is it hacking to cause zero damage 
+              to any computer systems, nor access anything without permission, 
+              when what you're doing with said legitimate access is scamming a 
+              pensioner online out of their life savings?”
+
+              <br><br>
+              In the UK, <a href="https://www.cps.gov.uk/legal-guidance/cybercrime-prosecution-guidance">legislation</a> 
+              deals with this problems by defining two things beneath the heading of 
+              “cybercrime”: 
+              <ul>
+                <li>
+                  Cyber-dependent crimes - those which target computer 
+                  systems and can only be carried out by these systems. For an 
+                  example, see the ransomware attacks against 
+                  <a href="https://www.bleepingcomputer.com/news/security/marks-and-spencer-breach-linked-to-scattered-spider-ransomware-attack/">M&S</a>. 
+                  When we talk about hacking, this is usually what we mean.
+                </li>
+                <li>
+                  Cyber-enabled crimes - those which can be carried out offline, 
+                  such as fraud and scams, but that can be increased in scale 
+                  through the use of computer systems. It's not uncommon for 
+                  hacking forums to have sections dedicated to these actions too.
+                </li>
+              </ul>
+                
+              We have ourselves a rectangle-square situation: all hacking is 
+              cybercrime but not all cybercrime is hacking. 
+            </p>
+
+          <br><br>
+
+          <h3>What are hacking forums?</h3>
+          <p>
+            I refer specifically to hacking forums, ie, those used to discuss 
+            malware, denial-of-service (DOS) attacks, ransomware attacks, and 
+            similar. Whilst acknowledging that these sites can host discussions 
+            on other topics (particularly online fraud), it differentiates these 
+            forums from those that focus on other cyber-enabled crimes, like <a href=”https://www.britannica.com/topic/Silk-Road-marketplace”>drug marketplaces</a>.
+
+            <br><br>
+
+            Hacking forums aren't the focus of law enforcement efforts just 
+            because they're platforms where users sit around and talk (or rather, 
+            argue) all day. Many of these sites are also used to sell data stolen 
+            in hacks or breaches, sell stolen credit card information, share 
+            malware source code, and offer any number of cybercrime-related 
+            services. 
+
+            <br><br>
+
+            Some of these forums can only be accessed through the dark web, 
+            whilst others can be accessed through both that and the clear web. 
+            The clear web simply refers to the regular internet which you, 
+            reader of this article, are on right now. The dark web refers to the 
+            parts of the internet that require specialist software or authorisation 
+            to access, for example, by using the Tor browser. It's important to 
+            note that the dark web is not by itself illegal, nor does a site 
+            being hosted on it make said site illegal, but the anonymity it 
+            offers means many sites focused around illegal activities are 
+            hosted on the dark web.
+          </p>
+          
+          <br><br>
+
+          <h3>So, what do we do about them?</h3>
+
+          <p>
+            Perhaps the most obvious answer to “How do we stop activity on hacking 
+            forums?” is to ensure there are no hacking forums online to be 
+            active on. But does that actually work as an approach?
+
+            <br><br>
+
+            Well...
+
+            <br><br>
+
+            One approach to doing this is by taking these websites down. Great!... 
+            unless the forum is hosted by a company based in a location where its 
+            contents aren't illegal. Even if, for the sake of argument, we say a 
+            given forum <em>is</em> based in a convenient jurisdiction, the website 
+            takedown process is a vast and many-headed beast. Various participants 
+            (targeted organisations, commercial bodies, law enforcement, industry 
+            regulators, etc) can jump through several hoops to have a website 
+            taken down, only for it to pop back up again with a slightly different 
+            name in a few weeks time, if the request is carried out at all. 
+            <a href=”https://par.nsf.gov/servlets/purl/10098095”>One study</a> 
+            found that over 14% of websites taken down during a monitoring period 
+            in 2019 were released back onto the market, and sometimes even 
+            re-purchased by the same owners who'd had them initially. It's also 
+            entirely possible that taking down hacking forums drives the users and 
+            operators of them further underground, into locations harder to monitor.
+
+            <br><br>
+
+            Okay, so, getting rid of these websites is a bit of a game of whack-a-mole. 
+            What if we just threaten to bring the whole weight of the law down on 
+            anyone who visits one?
+
+            <br><br>
+
+            First of all: good luck finding them! As mentioned, many hacking forums are 
+            hosted on the dark web, which is inherently anonymous. A not-insignificant 
+            amount of effort can be required to track down the user behind the screen, 
+            requiring specialist knowledge and skills, and usually international 
+            cooperation too. You can imagine that trying to arrest the operator(s) of 
+            prominent Russian hacking forum XSS is not likely to happen in the current 
+            geopolitical climate.
+
+            <br><br>
+
+            More than this, we have little evidence that threats of punishment 
+            actually work. One specific line I read in my research has stayed with me:
+            <center><em>“For example, although some research reports that punishment 
+              severity decreases intentions to violate information security policies, 
+              technology misuse, and computer abuse (D'Arcy et al. 2009; Cheng et al. 
+              2013), other studies find this effect in the USA only (Hovav and D'Arcy 
+              2012), while still others do not observe this relationship at all (Hu et 
+              al. 2011).”</em> - Deterrence in Cyberspace: An Interdisciplinary Review of the 
+              Empirical Literature, David Maimon</center>
+            <br>  
+            Uh-oh!
+
+            <br><br>
+
+            Other research points to the idea that potential cybercriminals don't believe 
+            law enforcement capable of following through on their threats and see 
+            them as lacking the ability to investigate cybercrime properly. Increasing 
+            the power of law enforcement is not the way to go, with those that are seen 
+            as overstepping their legitimacy also seen as having less authority. 
+          </p>
+
+          <div class="box">
+            <p>It can be easy to read the news and think “<a href=”https://www.theguardian.com/uk-news/series/spy-cops-scandal”>something</a> is <a href=”https://www.theguardian.com/society/2025/jun/03/black-schoolgirl-child-q-strip-searched-by-met-officers-suffered-mental-harm-hearing-told”>fundamentally</a> <a href=”https://www.bbc.co.uk/news/articles/c3e5289d3njo”>broken</a> in our <a href=”https://www.met.police.uk/police-forces/metropolitan-police/areas/about-us/about-the-met/bcr/baroness-casey-review/”>policing</a> <a href=”https://www.bbc.co.uk/news/52890363”>system</a>”, but after reading papers by people who know more about the topic than I do, I learnt that actually we've known our current system doesn't really work for a while now.</p>
+          </div>
+
+          <p>
+            Well, that's a long list of things that seem to not really work. Is there anything that <em>does</em>?
+            <br><br>
+            I have to be clear - arresting people does, in a fairly objective way, stop them from being active on hacking forums. But this process is costly and impractical if you tried to arrest every single user, no matter how infrequent, of a hacking forum, to say nothing of the open secret about how many of those users are researchers or law enforcement themselves. (And, also, look at those links above. Is giving more power to the police really the answer? Do you really think that's been the missing piece this whole time?)
+            <br><br>
+            But back on topic. Trying to take down websites can be a temporary fix at best. Arresting users tends to be unfeasible. What you find more often is that disruption is seen as a suitable alternative to either of those.
+            <br><br>
+            The good thing about “disrupting activity” on hacking forums is that, much like hacking, the word can mean whatever you want it to mean. Arrests are disruptions, so are asset seizures, so is sticking a cardboard cutout of a policeman in your shop window. For the purposes of this article, we can use “disruption” to mean “anything not already talked about.”
+            <br><br>
+            Strategies such as the Dutch <a href=”https://portswigger.net/daily-swig/hack-right-dutch-cybercrime-prevention-program-comes-of-age”>Hack_Right</a> and the UK's <a href=”https://www.nationalcrimeagency.gov.uk/cyber-choices”>Cyber Choices</a> aim to encourage young people who might be falling into cybercrime to use their skills for other, more legal, means. There is also a lot to be said for targeted warnings (although most of the evidence of their success comes from offline situations, with little research done into their effectiveness or otherwise in cyber spheres) - interventions that aim to get across to the recipient that their actions have a cost and a possible consequence. At this point in my reading, another line stood out to me:
+            <center><em>“First, the intervention should highlight the costs of offending (e.g. to future career prospects) but avoid threatening language. Second, it is best to focus on the wrongfulness of the act, rather than the actor (e.g. avoid stigmatisation). Third, those delivering the intervention should take time to listen to the recipient, hearing their side of the story, and treat them fairly and respectfully.”</em> — Cybercrime Prevention: Theory and Applications, Russell Brewer, Melissa de Vel-Palumbo, Alice Hutchings, Thomas Holt, Andrew Goldsmith and David Maimon</center>
+            <br>
+            Turns out people listen more when you talk if you don't go in shouting and screaming and slamming them with decades of jail time. Wow.
+            <br><br>
+            These techniques, however, tend to focus on people only beginning to be involved in cybercrime. It might be reasonable to point out that a seasoned vendor of stolen databases will not be put off by someone telling them that doing so is illegal. The final approach I'll look at here, then, is degrading trust in hacking forums and thus <em>increasing</em> the effort and risk required to engage.
+            <br><br>
+            There are lots of ways to go about doing this, most of which target hacking forums that also function as malware and stolen data marketplaces (which is a lot of them!). Typically, they make use of undercover operatives both active on and monitoring these forums. You could “lemonise” the market, i.e. introduce quality uncertainty and ensure that users selling high-quality products/services at higher prices can't stand out from, and thus can't compete with, those selling low-quality ones at low prices. Another option is a Sybil attack, where fictional users are created and give each other positive feedback. When real users try to interact with them, believing them to be real, they end up being scammed out or receiving what they tried to buy. There are also a range of digital equivalents to the old “policeman cardboard cut-out” that work to remind visitors that they might well be being watched by law enforcement, with the aim of getting them to think twice before interacting. I mentioned, when discussing arresting key players on hacking forums, that the anonymity of these places is a major obstacle in the process. But that same anonymity can be used with great effect to break apart the chain of trust in a forum.
+          </p>
+          
+            <div class="box">
+              <p>The first rule of deterring activity on hacking forums is to have fun and pretend to be someone else.</p>
+            </div>
+
+            <br><br>
+
+            <h3>Finishing thoughts</h3>
+
+            <p>
+              The thing with giving a government or law enforcement agency the powers to restrict access to websites and to track user's activities online is that it quickly sets a dangerous precedent. I don't think anyone is arguing for their human right to use <a href=”https://www.cloudflare.com/en-gb/learning/security/ransomware/wannacry-ransomware/”>WannaCry</a>, but if a body can define the illegal content that their population is unable to access then that's when you see online censorship growing <a href=”https://freedomhouse.org/report/freedom-net/2024/struggle-trust-online”>worldwide</a> . The solution to “people use the internet to talk about (and to actually commit) crime” is not, and should not be, “so let's do authoritarianism”.
+              <br><br>
+              To be clear, I'm not about to suggest we can stop all cybercrime ever by holding hands and agreeing to be friends. But when it comes to discouraging activity on hacking forums, there's a lot to be said for treating someone like a person whilst doing so.
+            </p>
+
+          <br><br>
+
+          <h3>Some suggested further reading</h3>
+
+          <p>
+            A. Hutchings, R. Clayton and R. Anderson, 'Taking down websites to prevent crime'. <a href="https://ieeexplore.ieee.org/document/7487947">Can be found here</a>
+            <br><br>
+            A. Hutchings and T. J. Holt, 'The online stolen data market: Disruption and intervention approaches'. <a href="https://www.tandfonline.com/doi/full/10.1080/17440572.2016.1197123?casa_token=GyoP3myZ6YcAAAAA%3AFRJ7V06XTinZxOVC8K8ss3PxPtHflLM7mh2fvf5Hf_Xj54BnhhMdir8bv3RjLYaRtqlWRQ_md3--ZQ#d1e153">Can be found here</a>
+            <br><br>
+            D. Maimon, 'Deterrence in cyberspace: An interdisciplinary review of the empirical literature'. <a href="https://link.springer.com/rwe/10.1007/978-3-319-78440-3_24">Can be found here</a>
+          </p>
+
+            <hr>
+            <div id="nextprev"></div>
+            <hr>
+            
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb">  
+              if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F"+"&opts=16798&num=10&ts=1676463200376");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
+            </script>
+            <!-- end www.htmlcommentbox.com -->
+          </main>
+          
+      </div>
+      <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+  </body>
+</html>

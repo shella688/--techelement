@@ -34,7 +34,7 @@ function randomQuote() {
        "Monstrous Regiment <br>by Terry Pratchett"],
       ["But in the end, joy cannot fend off evil.<br>Joy can only remind you why you fight,",
        "Dead Astronauts <br>by Jeff VanderMeer"],
-      ["But, if it is true that the act of observing changes the thing which is observed, it’s even more true that it changes the observer.",
+      ["But, if it is true that the act of observing changes the thing which is observed, it's even more true that it changes the observer.",
        "Soul Music <br>by Terry Pratchett"],
       ["I hope that it mattered, having someone beside you in the dark.",
        "I am in Eskew <br>episode 30: The Boy Who Saw Cracks in the World"],

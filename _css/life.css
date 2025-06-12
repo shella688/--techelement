@@ -32,7 +32,7 @@
 body {
     font-family: 'Atkinson-Hyperlegible', sans-serif;
     margin: 0;
-    background-color: #acecb2;
+    background-color: #009904;
     /* background-size: 65px;  */
     color: black;
     /* background-image: var(--body-bg-image); */
@@ -135,6 +135,11 @@ aside {
     font-size: smaller;
 }
 
+hr {
+    color: black;
+    border-color: black;
+}
+
 
 /* this is the color of the main content area,
 between the sidebars! */
@@ -181,10 +186,9 @@ h3 {
 
 
 .box {
-    background-color: #009904;
+    background-color: #acecb2;
     border: 1px solid #254f11;
     padding: 10px;
-    color: white;
 }
 
 .ss {
