@@ -67,7 +67,11 @@ function randomQuote() {
       ["All this happened, more or less.",
        "Slaughterhouse-Five <br>by Kurt Vonnegut"],
       ["We all just want to be people, and none of us know what that really means.",
-       "Borne <br>by Jeff VanderMeer"]
+       "Borne <br>by Jeff VanderMeer"],
+      ["I often wish that I could have known the end at the beginning, so that each detail could have been savoured as it happens. But then, life isn't a gramophone record one can play again and again till one feels one understands it. It is Now or Never for most of us, and we haven't the time. But we shall tomorrow...",
+       "How Steeple Sinderby Wanderers Won the FA Cup <br>by JL Carr"],
+      ["There may well be a moral here somewhere. But in the light of future events, it would be extremely hard to pin it down accurately.",
+       "Armageddon: The Musical <br>by Robert Rankin"]
     ];
 
     let i = Math.floor(Math.random() * quoteArray.length);
