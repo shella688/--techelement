@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <script src="../../_js/changeTheme.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TechElement</title>
+  <link rel="icon" type="imagr/x-icon" href="../../_assets/images/icon.png">
+
+  <link id="theme" rel="stylesheet" title="tech" href="../../_css/tech.css" type="text/css" media="all">
+</head>
+
+
+
+
+<body onload="getPreviousTheme()">
+  <div id="container">
+    <div id="headerArea">
+      <nav id="navbar" style="margin-bottom: 10px;">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../blog/index.html">Blog</a></li>
+          <li><a href="../../blog/archive.html">Archive</a></li>
+
+          <li>
+            <form id="themeDropdown" name="themeDropdown">
+              <label for="theme"><a>Theme:</a></label>
+              <select name="themeSelected" id="theme" onchange="changeTheme()">
+                <option>-- Select --</option>
+                <option onclick="changeTheme()">Tech</option>
+                <option onclick="changeTheme()">Magic</option>
+                <option onclick="changeTheme()">Life</option>
+                <option onclick="changeTheme()">Undead</option>
+                <option onclick="changeTheme()">Fire</option>
+                <option onclick="changeTheme()">Water</option>
+                <option onclick="changeTheme()">Air</option>
+                <option onclick="changeTheme()">Earth</option>
+                <option onclick="changeTheme()">Light</option>
+                <option onclick="changeTheme()">Dark</option>
+              </select>
+            </form>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+
+    <div id="flex">
+
+      <main>
+        <h1>Doctor Who and the Distinct Lack of Data Protection Regulations</h1>
+        <h2>When you find yourself on an alien planet, your number one priority should be
+          asking "How are they using my personal data?" </h2>
+        <h4 id="postDate"></h4>
+        <hr>
+
+        <p><br></p>
+        <p> Doctor Who is a long-running British science-fiction series, with Gallifrey -
+          the home of the Time Lords, a notable example being the main character the Doctor - a recurring planet in it.
+          At
+          no point in the show has any writer discussed what the data protection regulations are like on the planet,
+          presumably due to strange ideas about what counts as "engaging storytelling". </p>
+        <p> Good job I'm here! </p>
+        <br>
+        <h3> What? </h3>
+        <p> The Data Protection Act (DPA) 2018 lays out how personal data must be collected
+          and stored in order to protect people's privacy. It has seven principles: </p>
+        <ul>
+          <li>
+            <p> Lawfulness, fairness and transparency, </p>
+          </li>
+          <li>
+            <p> Purpose limitation, </p>
+          </li>
+          <li>
+            <p> Data minimisation, </p>
+          </li>
+          <li>
+            <p> Accuracy, </p>
+          </li>
+          <li>
+            <p> Storage limitation, </p>
+          </li>
+          <li>
+            <p> Integrity and confidentiality, </p>
+          </li>
+          <li>
+            <p> Accountability </p>
+          </li>
+        </ul>
+        <p> We are going to asses how good Time Lord society is at data protection by
+          looking at the show and evaluating how well what we see complies with these principles (based on my own
+          subjective judgement - I do this for fun, not with expert knowledge). A 5 is the most compliant and as such
+          the
+          best score, meaning a 1 is the worst. </p>
+
+
+        <div class="box">
+          As of June 2025, the Data Use and Access Act (DUUA) updated the DPA
+          somewhat. The changes it introduces are being phased in between June 2025 and June 2026. I'm not really taking
+          the DUUA into account - in the <a
+            href="https://ico.org.uk/about-the-ico/what-we-do/legislation-we-cover/data-use-and-access-act-2025/the-data-use-and-access-act-2025-what-does-it-mean-for-organisations/">
+            ICOs
+            own words </a> the act
+          "offer[s] you an opportunity to do things differently, rather than needing you to make specific changes to
+          comply with the law."
+        </div>
+
+        <p> Unlike the <a
+            href="https://techelement.neocities.org/blog/posts/2023-04-01-I-sat-down-and-counted-the-GDPR-violations-in-fiction-podcast-Red-Valley">
+            last
+            time I applied data protection laws to fictional media </a> , I'm not going to go through every single
+          appearance of Gallifrey in all of
+          Doctor Who ever, because my free time is limited. Instead, I'm going to just look at the TV show: all of
+          classic
+          Doctor Who (1963-1989) and all of modern Doctor Who until the time of writing (2005-January 2026). We're also
+          going to have a quick stop at the straight-to-TV film Doctor Who (1996), partly - but not solely - because I
+          like it. </p>
+        <p> This does mean I won't be covering anything Gallifrey or its government might do
+          in any books, audio dramas, comics or games. Perhaps on the day that I get round to listening to the Gallifrey
+          spin-off audio series I'll do a second part to this article. </p>
+        <p>
+
+        <div class="box">
+          <p>
+            If you <em>do</em> want to listen to some people experience every
+            single depiction of Gallifrey in Doctor Who canon, then can I recommend the podcast <a
+              href="https://gallifreypod.podbean.com/"> Gallifrey Ad Nauseam </a>?
+          </p>
+        </div>
+
+        </p>
+        <p> Let's go! </p>
+        <p><br></p>
+        <h3> Lawfulness, fairness and transparency </h3>
+        <p> Lawfulness means that personal data must be collected and used on a lawful basis
+          (as defined by UK GDPR) and that nothing done with the data breaches other laws. Fairness means personal data
+          cannot be used in a way detrimental, unexpected, or misleading to the people it's about. Transparency means
+          the
+          body collecting data must be open and honest from the start about how they will use personal data. </p>
+        <p> Perhaps the most obvious example of the Time Lords collecting personal data is
+          the Matrix and as such we'll be coming back to this one a lot. The Matrix is a vast construct, usually
+          compared
+          to a computer, that stores the memories of dead Time Lords [1] as well as pretty much everything single other
+          thing the Time Lords know. This includes, but is by no means limited to: scientific data [2], weapon
+          blueprints
+          [3] and details about experiments done on children [4]. Arguments about the ethics of acquiring such data is
+          beyond the scope of this article. </p>
+        <p> Is this lawful? As of the time of writing, no regulations <em>actually
+          </em>state that memories count as personal data, but I'm sure that's only due to a lack of imagination. From
+          this point onwards, we're going to assume that they do, alongside anything remotely similar such as a digital
+          recreation of a dead person, a digital recreation of a live person and <a
+            href="https://tardis.wiki/wiki/Biodata">
+            the DNA that stores your entire past and future </a> . </p>
+        <p> At least one lawful basis must apply when processing personal data: </p>
+        <ol>
+          <li>
+            <p> The individual has given <strong>consent.</strong> </p>
+          </li>
+          <li>
+            <p> The processing is necessary for a <strong>contract </strong>with the
+              individual. </p>
+          </li>
+          <li>
+            <p> You have a <strong>legal obligation </strong>to process the data.
+            </p>
+          </li>
+          <li>
+            <p> The is a <strong>vital interest </strong>in processing the data - ie,
+              protecting someone's life </p>
+          </li>
+          <li>
+            <p> The processing is necessary for a <strong>task in the public
+                interest</strong> </p>
+          </li>
+          <li>
+            <p> The process is necessary for a <strong>legitimate
+                interest</strong> </p>
+          </li>
+        </ol>
+        <p> We can assume that consent to be uploaded into the Matrix is given - when
+          characters discuss it there's no sign that this is something people are forced<em> </em>into [1]. As an
+          archive
+          of "the lived history" of the Time Lords [4] another lawful basis may also apply: tasks in the public
+          interest.
+          Good start! </p>
+        <p> Is this fair? We do see more than one instance [1] [5] [6] of data in the Matrix
+          being used to attack people accessing it, because Doctor Who is science-fiction and we can do what we want.
+          The
+          question is "When Time Lords die and agree to their memories being processed and uploaded, would they
+          reasonably
+          expect this data to then be used as a weapon?" <a
+            href="https://tardis.wiki/wiki/Cloister_Wraith#/media/File:Cloister_Wraith.jpg"> They don't really look
+            like they do. </a> </p>
+        <p> Is this transparent? This links to fairness - if data isn't being processed
+          fairly then nobody is likely being open and honest about that fact. Whilst the existence of the Matrix and the
+          data stored in it is a known fact [1], we only have to revisit the image above to see that reality of the
+          Matrix
+          isn't, perhaps, as easy and pleasant as advertised. And we started so well too… </p>
+        <p> 3/5 </p>
+        <img class="ss" src="../../_assets/images/DW-GDPR/graph1.png" alt="A radar chart showing one spoke for each data protection principle. The score for this principle (3) is shown">
+        <p><br></p>
+        <h3> Purpose limitation </h3>
+        <p> For purpose limitation, anybody collecting personal data must be clear about
+          their purposes for doing so from the start. This purpose must be recorded and given to the people data is
+          collected from, and data cannot be used for a new purpose without consent (or an obligation under law). It
+          will
+          often go hand-in-hand with the first principle above. </p>
+        <p> Cloister Wraiths guard one of the locations where the Matrix can be physically
+          accessed [6]. To put a name to a face, they're <a
+            href="https://tardis.wiki/wiki/Cloister_Wraith#/media/File:Cloister_Wraith.jpg"> those people </a> . Having
+          already
+          established that using someone's memories to create an eternally-roaming security guard is probably neither
+          fair
+          nor transparent, we can assume that the Gallifreyan government hasn't been fully clear when stating why they
+          collect these memories. </p>
+        <p> Whilst in the show we never learn explicitly that TARDISes - space/time machines
+          created by the Time Lords - send data collected to the Matrix, I'm going to include one in-scope example to
+          further demonstrate how little the Time Lords care for purpose limitation. A TARDIS is capable of collecting
+          biometric data, which can then be used to open the Eye of Harmony at the centre of each machine. Specifically,
+          it must scan a human eye to open. At no point is any human told why their biometric data is needed to do this
+          (nor do they ever give their consent, but that's largely because it's the villain trying to open it). It's
+          also
+          unclear why a TARDIS is capable of processing this data at all, since opening an Eye of Harmony for too long
+          can
+          destroy the entire space-time continuum [7]. We haven't even <em>started </em>to discuss that biometrics for
+          identification are special-category data and are subject to stronger protection laws. </p>
+        <p> Not a win for purpose limitation. </p>
+        <p> 1/5 </p>
+
+        <img class="ss" src="../../_assets/images/DW-GDPR/graph2.png" alt="A radar chart showing one spoke for each data protection principle. The score for this principle (1) has been added">
+
+        <div class="box">
+          <p>
+            For more about TARDISes sending data to the Matrix, see <a
+              href="https://tardis.wiki/wiki/The_Quantum_Archangel_(novel)"> The Quantum
+              Archangel </a> by Craig Hinton and <a href="https://tardis.wiki/wiki/Songs_of_Love_(audio_story)"> Songs
+              of
+              Love
+            </a> by Matt
+            Fitton.
+          </p>
+        </div>
+        <p><br></p>
+        <h3> Data minimisation </h3>
+        <p> Data minimisation means that the data collected must be enough to fulfil the
+          stated purpose of collection (adequate), has a link to that purpose (relevant) and is limited to what is
+          necessary. </p>
+        <p> It's a balance, especially when it comes to archiving information. On the one
+          hand, I sitting here in the real world can say that uploading the whole person to the Matrix seems excessive.
+          On
+          the other hand, the data stored in the Matrix can be used to predict the future and warn of incoming disasters
+          [6]. We never learn the exact details of <em>how </em>it does that - and so equally we can't say that the
+          memories of these dead Time Lords are excessive or irrelevant data. On a third, science-fiction-y hand, if
+          you're storing so much data that knowing it all would turn a person mad and/or fill them with enough rage
+          regarding what's stored there to destroy your whole planet [8] [4], then once again we land on the side of
+          "this
+          is excessive amounts of data". </p>
+        <p> 2/5 </p>
+        <img class="ss" src="../../_assets/images/DW-GDPR/graph3.png" alt="A radar chart showing one spoke for each data protection principle. The score for this principle (2) has been added">
+        <p><br></p>
+        <h3> Accuracy </h3>
+        <p> Bodies collecting personal data must take reasonable steps to ensure that said
+          data is neither incorrect nor misleading. It may have to be kept updated, or must be erased as soon as
+          possible
+          if found to be wrong. </p>
+        <p> When the personal information belongs to a dead person, it probably isn't going
+          to change much. What's more, with this being an archive and these memories a historical record, data
+          inaccurate
+          to the present day can be kept, so long as it's clearly shown to be historical. It's like how the 1921 UK
+          census
+          doesn't need to be updated to show where all those people live (or otherwise) in 2026. </p>
+        <p> Taking reasonable steps to ensure personal data about living people is accurate
+          is harder when your society uses time machines, but the Time Lords do actually do it. When a general on
+          Gallifrey receives a call from the Doctor, he's dismayed that "all twelve of them" are calling. It's bad news
+          for the General because that piece of data is incorrect: the Doctor has a new, thirteenth face [9]. This
+          information has been corrected the next time this general talks to the Doctor, with him talking to the correct
+          incarnation at the correct time [6]. </p>
+        <p> The principle of accuracy is different to that of integrity and confidentiality
+          - we're not discussing here inaccuracies brought about by unauthorised access to the Matrix. That's a good
+          thing
+          right now, because the Time Lords are doing well in this section. </p>
+        <p> 5/5 </p>
+        <img class="ss" src="../../_assets/images/DW-GDPR/graph4.png" alt="A radar chart showing one spoke for each data protection principle. The score for this principle (5) has been added">
+        <p><br></p>
+        <h3> Storage limitation </h3>
+        <p> Personal data cannot be held for longer than necessary, and the length of time
+          it <em>is </em>held for must be justified. Bodies holding personal data should periodically review it and
+          erase
+          or anonymise it when no longer needed, and an individual has the right to request their data - if no longer
+          needed - is deleted. Data can, however, be kept for longer periods of time when used for archiving in the
+          public
+          interest, scientific or historical research, or statistical purposes. </p>
+        <p> As an archive, personal data can be stored in the Matrix indefinitely. However,
+          it starts getting thorny when this indefinitely-kept data is used to make decisions. The <a
+            href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/">
+            ICO
+            website </a> states that data
+          stored indefinitely for archival purposes must <em>only </em>be used for archival purposes - none of this
+          "predicting the future using the memories of all our dead people" nonsense. </p>
+        <p> At this point, you may be starting to ask if creating the Matrix was a good
+          idea. I don't have an answer for that one. </p>
+        <p> 2/5 </p>
+        <img class="ss" src="../../_assets/images/DW-GDPR/graph5.png" alt="A radar chart showing one spoke for each data protection principle. The score for this principle (2) has been added">
+        <p><br></p>
+        <h3> Integrity and confidentiality </h3>
+        <p> There must be appropriate security measures in place to protect personal data
+          held. </p>
+        <p> Extracting data from the Matrix without permission amounts to something equal to
+          treason [10], but this threat of punishment by itself doesn't count as a security measure. The Cloister
+          Wraiths,
+          on the other hand, absolutely do, alongside authorisation measures suer as a user having to wear one of two
+          special silly hats [1] [3], or be granted access by a specific key holder [5]. </p>
+        <p> Looking at that paragraph, the Matrix would appear well-protected. However, one
+          thing that comes increasingly apparent is that <em>none of those measures do owt.</em> Doctor Who is
+          positively
+          crammed with people gaining unauthorised access to it [1] [10] [5] [6] [4]. There's not point having all these
+          security measures when they don't work! </p>
+        <p> 1/5 </p>
+        <img class="ss" src="../../_assets/images/DW-GDPR/graph6.png" alt="A radar chart showing one spoke for each data protection principle. The score for this principle (1) has been added">
+        <p><br></p>
+        <h3> Accountability </h3>
+        <p> Or, <em>somebody</em> has to take responsibility for following the law. Since we
+          never see in canon any actual data protection laws, we're going to have to make some assumptions based on how
+          well the great and good of Gallifrey take responsibility and demonstrate compliance to their other laws.
+        </p>
+        <p> At one point, the Doctor is put on trial, initially for harmful interference [2]
+          and later upgraded to genocide [11]. We learn that Gallifrey has a justice system based on jury trials, albeit
+          a
+          system that can be (apparently easily) hijacked by a future version of yourself who wants you sentenced to
+          death
+          [5]. In fact, the Doctor is the <em>only </em>character we ever see the Time Lords put on trial. Nobody in
+          charge of the Matrix when data is lost from it is ever sanctioned, nobody accessing it without permission is
+          ever tried even when they're caught and, for a whole planet, there is no specific office or person that
+          manages
+          the Matrix. If there's a problem with data protection, the best anyone can do is go tell the Government as a
+          general body. That's not accountability, that's carrying on as usual and hoping nobody notices. </p>
+        <p> 2/5. At least they have<em> </em>a justice system that <em>tries </em>to be
+          fair. </p>
+          <img class="ss" src="../../_assets/images/DW-GDPR/graphFull.png" alt="A radar chart showing one spoke for each data protection principle. The score for this principle (2) has been added">
+        <p><br></p>
+        <h3> Conclusion </h3>
+        <p> Whilst the Time Lords tend to collect personal data on a lawful basis, keep it
+          up-to-date and use it in reasonable ways - if rather grand, science-fiction-y ones - they often collect more
+          than they need and don't both to explain to the individuals involved the full truth of the reasons behind it.
+          Existing security measures are rarely enough to protect this data and the is little system of oversight to
+          ensure accountability and compliance. </p>
+        <p> Maybe - just maybe - storing everything a species ever learnt over their
+          millennia of existence, including all the memories of all their dead, in one ill-protected archive is a bad
+          idea. </p>
+        <p><br></p>
+        <details><summary>DW episodes referenced</summary>
+        <p> [1] The Deadly Assassin. Written by Robert Holmes, starring Tom Baker as the
+          Fourth Doctor. </p>
+        <p> [2] The Mysterious Planet. Written by Robert Holmes, starring Colin Baker as the
+          Sixth Doctor. </p>
+        <p> [3] The Invasion of Time. Written by Graham Williams and Anthony Read, starring
+          Tom Baker as the Fourth Doctor. </p>
+        <p> [4] The Timeless Children. Written by Chris Chibnall, starring Jodie Whittaker
+          as the Thirteenth Doctor. </p>
+        <p> [5] The Ultimate Foe. Written by Robert Holmes and Pip and Jane Baker, starring
+          Colin Baker as the Sixth Doctor. </p>
+        <p> [6] Hell Bent. Written by Steven Moffat, starring Peter Capaldi as the Twelfth
+          Doctor. </p>
+        <p> [7] Doctor Who (1996). Written by Matthew Jacobs, starring Paul McGann as the
+          Eighth Doctor. </p>
+        <p> [8] Spyfall. Written by Chris Chibnall, starring Jodie Whittaker as the
+          Thirteenth Doctor. </p>
+        <p> [9] The Day of the Doctor. Written by Steven Moffat, starring John Hurt as the
+          War Doctor, David Tennant as the Tenth Doctor, Matt Smith as the Eleventh Doctor and (briefly) Peter Capaldi
+          as
+          the Twelfth Doctor. </p>
+        <p> [10] Arc of Infinity. Written by Johnny Byrne, starring Peter Davison as the
+          Fifth Doctor. </p>
+        <p> [11] Terror of the Vervoids. Written by Pip and Jane Baker, starring Colin Baker
+          as the Sixth Doctor. </p>
+        <p> From this list we can conclude that Robert Holmes was the DW writer who cared
+          the least about data protection. </p>
+        </details>
+
+
+
+
+
+        <hr>
+        <div id="nextprev"></div>
+        <hr>
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css"
+          href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb">
+          if (!window.hcb_user) { hcb_user = {}; } (function () { var s = document.createElement("script"), l = hcb_user.PAGE || ("" + window.location).replace(/'/g, "%27"), h = "https://www.htmlcommentbox.com"; s.setAttribute("type", "text/javascript"); s.setAttribute("src", h + "/jread?page=" + encodeURIComponent(l).replace("+", "%2B") + "&mod=%241%24wq1rdBcg%24I7vhCk6IeXYp2Z1u970fP%2F" + "&opts=16798&num=10&ts=1676463200376"); if (typeof s != "undefined") document.getElementsByTagName("head")[0].appendChild(s); })(); 
+        </script>
+        <!-- end www.htmlcommentbox.com -->
+      </main>
+
+    </div>
+    <footer id="footer" style="margin-top: 10px;">Feel free to share, remix, and reuse this site, just don't take the
+      piss</footer>
+  </div>
+  <script src="../../_js/zoneletsScript.js"></script>
+</body>
+
+</html>
